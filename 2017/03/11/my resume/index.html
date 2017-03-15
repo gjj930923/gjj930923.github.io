@@ -13,11 +13,11 @@
 
     <title>
         
-          初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位） - Jeff&#39;s Blog
+          My Resume/CV - Junjia Guo - Jeff&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://gjj930923.github.io/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
+    <link rel="canonical" href="http://gjj930923.github.io/2017/03/11/my resume/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,16 +165,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
-                        
-                          <a class="tag" href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>
+                          <a class="tag" href="/tags/#Resume" title="Resume">Resume</a>
                         
                     </div>
-                    <h1>初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）</h1>
+                    <h1>My Resume/CV - Junjia Guo</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Jeff Guo on
-                        2016-12-22
+                        2017-03-11
                     </span>
                 </div>
             </div>
@@ -193,13 +191,73 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="提示找不到AVD"><a href="#提示找不到AVD" class="headerlink" title="提示找不到AVD"></a><a href="http://stackoverflow.com/questions/27537578/could-not-find-ini-file-in-android-avd-home-nor-in-home-android-avd" target="_blank" rel="external">提示找不到AVD</a></h2><pre><code>Could not find INI file in $ANDROID_AVD_HOME nor in $HOME/.android/avd
-</code></pre><p>解决方案：<code>~/.android/.avd</code> 下有可能是空的，实际上AVD的具体配置文件是在<code>/root/.android/.avd</code>中，文件名诸如<code>Nexus_7_API_23.ini</code>。因此需要将<code>~/.android</code>下的<code>.avd</code>文件夹删除，再设置软链连接到<code>/root/.android/.avd</code>。</p>
-<p>Terminal 操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rm ~/.android/.avd</div><div class="line">$ sudo ln -s /root/.android/.avd ~/.android/.avd</div></pre></td></tr></table></figure></p>
-<h2 id="X-GLXIsDirect错误"><a href="#X-GLXIsDirect错误" class="headerlink" title="X_GLXIsDirect错误"></a><a href="http://android.stackexchange.com/questions/145437/reinstall-avd-on-ubuntu-16-04" target="_blank" rel="external">X_GLXIsDirect错误</a></h2><p>报错输出内容:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Minor opcode of failed request:  6 (X_GLXIsDirect)</div><div class="line">Serial number of failed request:  48</div><div class="line">Current serial number in output stream:  47</div><div class="line">libGL error: unable to <span class="keyword">load</span> driver: swrast_dri.so</div><div class="line">libGL <span class="keyword">error</span>: <span class="keyword">failed</span> <span class="keyword">to</span> <span class="keyword">load</span> driver: swrast</div><div class="line">X <span class="keyword">Error</span> <span class="keyword">of</span> <span class="keyword">failed</span> request:  GLXBadContext</div><div class="line">Major opcode <span class="keyword">of</span> <span class="keyword">failed</span> request:  <span class="number">155</span> (GLX)</div><div class="line">Minor opcode <span class="keyword">of</span> <span class="keyword">failed</span> request:  <span class="number">6</span> (X_GLXIsDirect)</div><div class="line"><span class="built_in">Serial</span> <span class="built_in">number</span> <span class="keyword">of</span> <span class="keyword">failed</span> request:  <span class="number">48</span></div><div class="line"><span class="keyword">Current</span> <span class="built_in">serial</span> <span class="built_in">number</span> <span class="keyword">in</span> <span class="keyword">output</span> stream:  <span class="number">47</span></div><div class="line">libGL <span class="keyword">error</span>: unable <span class="keyword">to</span> <span class="keyword">load</span> driver: swrast_dri.so</div><div class="line">libGL <span class="keyword">error</span>: <span class="keyword">failed</span> <span class="keyword">to</span> <span class="keyword">load</span> driver: swrast</div><div class="line">X <span class="keyword">Error</span> <span class="keyword">of</span> <span class="keyword">failed</span> request:  BadValue (<span class="built_in">integer</span> parameter <span class="keyword">out</span> <span class="keyword">of</span> <span class="keyword">range</span> <span class="keyword">for</span> operation)</div><div class="line">Major opcode <span class="keyword">of</span> <span class="keyword">failed</span> request:  <span class="number">155</span> (GLX)</div><div class="line">Minor opcode <span class="keyword">of</span> <span class="keyword">failed</span> request:  <span class="number">24</span> (X_GLXCreateNewContext)</div><div class="line"><span class="keyword">Value</span> <span class="keyword">in</span> <span class="keyword">failed</span> request:  <span class="number">0x0</span></div><div class="line"><span class="built_in">Serial</span> <span class="built_in">number</span> <span class="keyword">of</span> <span class="keyword">failed</span> request:  <span class="number">32</span></div><div class="line"><span class="keyword">Current</span> <span class="built_in">serial</span> <span class="built_in">number</span> <span class="keyword">in</span> <span class="keyword">output</span> stream:  <span class="number">33</span></div></pre></td></tr></table></figure></p>
-<p>解决方案：<br>备份AndroidSDK自带lib64stc++6包，使用ubuntu软件库的lib64stc++6代替并安装mesa-utils。<br>Terminal 操作：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install lib64stdc++<span class="number">6</span></div><div class="line">$ cd ~/Android/Sdk/tools/lib64/libstdc++</div><div class="line">$ mv libstdc++<span class="selector-class">.so</span>.<span class="number">6</span> libstdc++<span class="selector-class">.so</span>.<span class="number">6</span><span class="selector-class">.original</span></div><div class="line">$ ln -s /usr/lib64/libstdc++<span class="selector-class">.so</span>.<span class="number">6</span> ~/Android/Sdk/tools/lib64/libstdc++</div><div class="line">$ sudo apt-get install mesa-utils</div></pre></td></tr></table></figure></p>
-<h2 id="Could-not-create-GLES-2-x-Pbuffer"><a href="#Could-not-create-GLES-2-x-Pbuffer" class="headerlink" title="Could not create GLES 2.x Pbuffer!"></a><a href="http://stackoverflow.com/questions/30686324/error-while-running-android-application-could-not-initialize-opengles-emulatio" target="_blank" rel="external">Could not create GLES 2.x Pbuffer!</a></h2><p>错误提示:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">failed to <span class="keyword">create</span> drawable</div><div class="line">getGLES2ExtensionString: Could <span class="keyword">not</span> <span class="keyword">create</span> GLES <span class="number">2.</span>x Pbuffer!</div><div class="line"><span class="keyword">Failed</span> <span class="keyword">to</span> obtain GLES <span class="number">2.</span>x extensions <span class="keyword">string</span>!</div><div class="line">Could <span class="keyword">not</span> initialize emulated framebuffer</div><div class="line">emulator: Listening <span class="keyword">for</span> console connections <span class="keyword">on</span> port: <span class="number">5554</span></div><div class="line">emulator: <span class="built_in">Serial</span> <span class="built_in">number</span> <span class="keyword">of</span> this emulator (<span class="keyword">for</span> ADB): emulator<span class="number">-5554</span></div><div class="line">emulator: <span class="keyword">ERROR</span>: Could <span class="keyword">not</span> initialize OpenglES emulation, <span class="keyword">use</span> <span class="string">'-gpu off'</span> <span class="keyword">to</span> <span class="keyword">disable</span> it.</div></pre></td></tr></table></figure></p>
-<p>解决方案：<br>在Android Studio中进入AVD Manager，编辑相应的AVD设备，在Emulated Performance中选择<code>Software GLES2.0</code>。保存并重启即可。</p>
+                <h2 id="ABOUT-ME"><a href="#ABOUT-ME" class="headerlink" title="ABOUT ME"></a>ABOUT ME</h2><p><img src="http://ohllqfwf2.bkt.clouddn.com/2017/01/16/ab430f114e6c3e8d842910d31106f935.JPG/thumbnail.jpg" alt="My Photo" title="My Photo"><br>Name: <strong>Junjia Guo</strong><br>Email: <strong>jug44[AT]pitt[DOT]edu</strong><br>Objective Job: <strong>2017 Summer Internship (May to August)</strong><br>Current Location: Pittsburgh, PA<br>Degree Candidating: Master of Science in Information Science<br><a href="http://www.linkedin.com/in/JunjiaGuo" target="_blank" rel="external">My LinkedIn Page</a><br><a href="https://github.com/gjj930923" target="_blank" rel="external">My GitHub Page</a><br><a href="http://ohllqfwf2.bkt.clouddn.com/files/Resume%20-%20Junjia%20Guo.pdf" target="_blank" rel="external">My Resume/CV in PDF</a></p>
+<h2 id="PERSONAL-INTRODUCTION"><a href="#PERSONAL-INTRODUCTION" class="headerlink" title="PERSONAL INTRODUCTION"></a>PERSONAL INTRODUCTION</h2><p>I am the first year master student at the school of information science at the University of Pittsburgh, majoring in Information Science. Now I am seeking for the internship opportunities, available from May 2017 to August during the summer session. The internship will also be available after the session if the job location is in Pittsburgh.</p>
+<p>I graduated from South China University of Technology(SCUT), one of the well-known universities in China, and majored in software engineering. During the four-year period of study, I attended some social clubs to hold campus activities and manage them. I also finished some development by myself or with some partners in the campus and attended some internships in well-known companies as a fourth-year bachelor student. I obtained two scholarships and one honor as well.</p>
+<p>I am good at Java, PHP and MySQL, familiar with Apache, Linux, C++, python and R and I have several personal hobbies including running, body building, swimming, and badminton. Always embrace the future. Coding changes the world!</p>
+<h2 id="EDUCATION"><a href="#EDUCATION" class="headerlink" title="EDUCATION"></a>EDUCATION</h2><h3 id="MASTER-OF-SCIENCE"><a href="#MASTER-OF-SCIENCE" class="headerlink" title="MASTER OF SCIENCE"></a>MASTER OF SCIENCE</h3><p><a href="http://www.pitt.edu" target="_blank" rel="external">UNIVERSITY OF PITTSBURGH</a><br><a href="http://ischool.pitt.edu/" target="_blank" rel="external">School of Information Sciences</a><br>Sep 2016 - Dec 2017(exp)<br>Overall GPA: 3.81/4.0</p>
+<h3 id="BACHELOR-OF-ENGINEERING"><a href="#BACHELOR-OF-ENGINEERING" class="headerlink" title="BACHELOR OF ENGINEERING"></a>BACHELOR OF ENGINEERING</h3><p><a href="http://www.scut.edu.cn/" target="_blank" rel="external">SOUTH CHINA UNIVERSITY OF TECHNOLOGY</a><br><a href="http://www.scut.edu.cn/sse/" target="_blank" rel="external">School of Software Engineering</a><br>Sep 2012 - Jul 2016<br>2 scholarships for top 20% students.<br>1 Merit-Student Reward.</p>
+<h2 id="MAIN-COURSEWORK"><a href="#MAIN-COURSEWORK" class="headerlink" title="MAIN COURSEWORK"></a>MAIN COURSEWORK</h2><h3 id="GRADUATE"><a href="#GRADUATE" class="headerlink" title="GRADUATE"></a>GRADUATE</h3><p>INFO STORAGE &amp; RETRIEVAL<br>DATABASE MANAGEMENT<br>DATA MINING<br>DATA ANALYTICS<br>ADV TOPICS IN DATABASE MANAGEMENT<br>SPATIAL DATA ANALYTICS<br>INTRO TO NEURAL NETWORK<br>CLOUD COMPUTING (CMU)</p>
+<h3 id="UNDERGRADUATE"><a href="#UNDERGRADUATE" class="headerlink" title="UNDERGRADUATE"></a>UNDERGRADUATE</h3><p>SOFTWARE TESTING &amp; MAINTENANCE<br>INTRO TO MOBILE COMPUTING<br>COMPUTER NETWORK<br>DATA STRUCTURE &amp; ALGORITHMS<br>COMPUTATIONAL MODEL &amp; ALGORITHMIC TECHNIQUE</p>
+<h2 id="WORK-EXPERIENCE"><a href="#WORK-EXPERIENCE" class="headerlink" title="WORK EXPERIENCE"></a>WORK EXPERIENCE</h2><h3 id="PHP-DEVELOPER-INTERN"><a href="#PHP-DEVELOPER-INTERN" class="headerlink" title="PHP DEVELOPER INTERN"></a>PHP DEVELOPER INTERN</h3><p><a href="http://www.baiyangwang.com" target="_blank" rel="external">Qingdao Best Ocean Health Pharmacy Chain - Development Center(Guangzhou)</a><br>Mar 2016 – Apr 2016 | Guangzhou, China</p>
+<ul>
+<li>Responsible for the development of the backend and APIs of the e-commercial mall(for Android &amp; iOS), using CodeIgniter 3.0 Framework and the capacity of downloading swifted 200% during the two-month internship.</li>
+<li>Responsible for the combination of users’ profiles and addresses from the APP and the website (<a href="http://www.baiyangwang.com" target="_blank" rel="external">http://www.baiyangwang.com</a> in Chinese) so that users can user only one account to log in both the APP and the website.</li>
+<li>Improved the coupons management system.</li>
+<li>Worked based on PHP/HTML/JavaScript(jQuery)</li>
+</ul>
+<h3 id="SOFTWARE-DESIGN-ENGINEER-INTERN"><a href="#SOFTWARE-DESIGN-ENGINEER-INTERN" class="headerlink" title="SOFTWARE DESIGN ENGINEER INTERN"></a>SOFTWARE DESIGN ENGINEER INTERN</h3><p><a href="https://www.ericsson.com/" target="_blank" rel="external">Ericsson Mobile Data Applications Technology Research &amp; Development (Guangzhou) Co., Ltd.</a><br>Sep 2015 – Feb 2016 | Guangzhou, China</p>
+<ul>
+<li>Developed a Java EE application platform for business customers.</li>
+<li>Maintained each version of the published system, released the patches at the same time and new versions on a regular basis.</li>
+<li>Worked based on Linux/shell/JavaEE.</li>
+</ul>
+<h2 id="PROJECT-EXPERIENCES"><a href="#PROJECT-EXPERIENCES" class="headerlink" title="PROJECT EXPERIENCES"></a>PROJECT EXPERIENCES</h2><h3 id="GRADUATE-1"><a href="#GRADUATE-1" class="headerlink" title="GRADUATE"></a>GRADUATE</h3><h4 id="The-Enhanced-Search-Engine-of-Etsy-an-e-Commerce-Website"><a href="#The-Enhanced-Search-Engine-of-Etsy-an-e-Commerce-Website" class="headerlink" title="The Enhanced Search Engine of Etsy, an e-Commerce Website"></a>The Enhanced Search Engine of Etsy, an e-Commerce Website</h4><p>Sep 2016 – Dec 2016</p>
+<ul>
+<li>Enhancing the Etsy search engine enabling it to search items in Chinese and return the top 10 most relevant items.</li>
+<li>Using the Bing API to translate between Chinese and English and Etsy Restful API to gain search results.</li>
+<li>Using Java to process the input queries from users and implement the language model with Apache Lucene to return the top 10 ranking items.</li>
+<li>Scored 93/100 in the final project.</li>
+</ul>
+<h4 id="Pittsburgh-Bike-Sharing-Demand-Prediction"><a href="#Pittsburgh-Bike-Sharing-Demand-Prediction" class="headerlink" title="Pittsburgh Bike Sharing Demand Prediction"></a>Pittsburgh Bike Sharing Demand Prediction</h4><p>Sep 2016 – Dec 2016<br><a href="https://github.com/gjj930923/public-bike-prediction" target="_blank" rel="external">GitHub Code</a></p>
+<ul>
+<li>Using the history of bike sharing data as well as the history weather and holiday data to predict the bike sharing demands.</li>
+<li>Separating the data into training and testing sets and applying supervised and unsupervised learning methods, including the logistic regression, k-NN, k-means and SVM, to the data with R programming language.</li>
+<li>Scored 87/100 in the final project.</li>
+</ul>
+<h4 id="The-Development-of-an-e-Commerce-Website-Based-on-MySQL-and-PHP"><a href="#The-Development-of-an-e-Commerce-Website-Based-on-MySQL-and-PHP" class="headerlink" title="The Development of an e-Commerce Website Based on MySQL and PHP"></a>The Development of an e-Commerce Website Based on MySQL and PHP</h4><p>Sep 2016 – Dec 2016<br><a href="https://github.com/gjj930923/ecommerce" target="_blank" rel="external">GitHub Code</a></p>
+<ul>
+<li>Responsible for the demand analysis, the design of MySQL database and the implementation of all functions with PHP.</li>
+<li>Use Git to manage all group members’ codes and ThinkPHP to construct the framework of the website.</li>
+<li>Worked based on PHP/MySQL/CSS/HTML/Git.</li>
+</ul>
+<h3 id="UNDERGRADUATE-1"><a href="#UNDERGRADUATE-1" class="headerlink" title="UNDERGRADUATE"></a>UNDERGRADUATE</h3><h4 id="The-Development-of-Campus-Second-hand-Market-and-the-Campus-Navigation"><a href="#The-Development-of-Campus-Second-hand-Market-and-the-Campus-Navigation" class="headerlink" title="The Development of Campus Second-hand Market and the Campus Navigation"></a>The Development of Campus Second-hand Market and the Campus Navigation</h4><p>Jan 2016 – May 2016<br><a href="https://github.com/gjj930923/scuthelper" target="_blank" rel="external">GitHub Code</a></p>
+<ul>
+<li>Developed the whole project, including requirements analysis, database design, and front end (PC + phone) design, coding and testing.</li>
+<li>A simple recommendation system is included.</li>
+<li>Worked based on php/HTML/CSS/MySQL.</li>
+<li>The topic of my essay which candidates for bachelor’s degree.</li>
+</ul>
+<h4 id="“Guardian-of-Kids’-Eyes”-Development-of-the-Android-APP"><a href="#“Guardian-of-Kids’-Eyes”-Development-of-the-Android-APP" class="headerlink" title="“Guardian of Kids’ Eyes” - Development of the Android APP"></a>“Guardian of Kids’ Eyes” - Development of the Android APP</h4><p>Dec 2014 – Jan 2015</p>
+<ul>
+<li>Responsible for the integration of materials and making up the Android APP, with 3.5 curriculum credits and the members’ average points of 80+/100.</li>
+<li>The idea of its design was brought out by a post-graduate student majoring for preschool education, which fits the kids’ psychological characteristics.</li>
+</ul>
+<h4 id="School-of-Software-Engineering-Internship-Tracking-System-Improvement"><a href="#School-of-Software-Engineering-Internship-Tracking-System-Improvement" class="headerlink" title="School of Software Engineering Internship Tracking System Improvement"></a>School of Software Engineering Internship Tracking System Improvement</h4><p>Apr 2014 – Jul 2014</p>
+<ul>
+<li>Developed the project based on Java, maintained the original system and modified the bugs.</li>
+<li>Worked based on PHP/HTML.</li>
+</ul>
+<h4 id="Simulated-Intelligent-Household-System-based-on-Mobile-Applications"><a href="#Simulated-Intelligent-Household-System-based-on-Mobile-Applications" class="headerlink" title="Simulated Intelligent Household System based on Mobile Applications"></a>Simulated Intelligent Household System based on Mobile Applications</h4><p>Jul 2014 – Aug 2014</p>
+<ul>
+<li>Be mainly responsible for the development of Android application and database design.</li>
+<li>Worked based on C/ Android.</li>
+</ul>
+<h2 id="PROGRAMMING-SKILLS"><a href="#PROGRAMMING-SKILLS" class="headerlink" title="PROGRAMMING SKILLS"></a>PROGRAMMING SKILLS</h2><p><strong>PROFICIENT</strong><br>Java • PHP • MySQL • R • Android</p>
+<p><strong>FAMILIAR</strong><br>C++ • Linux • Python • Shell • Git • HTML • JavaScript</p>
+<h2 id="CAMPUS-EXPERIENCE"><a href="#CAMPUS-EXPERIENCE" class="headerlink" title="CAMPUS EXPERIENCE"></a>CAMPUS EXPERIENCE</h2><p><strong>Member of the Publicity Department</strong><br>The Campus IBM club | 2013</p>
+<p><strong>Executive Director of Information Center</strong><br>The Students’ Union | 2012-2014</p>
+<h2 id="PERSONAL-HOBBIES"><a href="#PERSONAL-HOBBIES" class="headerlink" title="PERSONAL HOBBIES"></a>PERSONAL HOBBIES</h2><p>Running • Body Building • Swimming • Badminton • Basketball</p>
 
 
                 <hr>
@@ -209,11 +267,11 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/"
-                    data-title="初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）"
-                    data-url="http://gjj930923.github.io/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/"
+                    data-thread-key="2017/03/11/my resume/"
+                    data-title="My Resume/CV - Junjia Guo"
+                    data-url="http://gjj930923.github.io/2017/03/11/my resume/"
                     data-images=""
-                    data-content="提示找不到AVDCould not find INI file in $ANDROID_AVD... | Jeff&#39;s Blog " >
+                    data-content="ABOUT MEName: Junjia GuoEmail: jug44[AT]pitt[DO... | Jeff&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -231,13 +289,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/12/22/Android 学习小结1/" data-toggle="tooltip" data-placement="top" title="Android 学习小结1">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/11/22/AboutMe/" data-toggle="tooltip" data-placement="top" title="About Me">Next Post &rarr;</a>
+                            <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/" data-toggle="tooltip" data-placement="top" title="AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -246,9 +300,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/"
-                        data-title="初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）"
-                        data-url="http://gjj930923.github.io/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/" >
+                        data-thread-key="2017/03/11/my resume/"
+                        data-title="My Resume/CV - Junjia Guo"
+                        data-url="http://gjj930923.github.io/2017/03/11/my resume/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -274,9 +328,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
-                        
-                          <a class="tag" href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>
+                          <a class="tag" href="/tags/#Resume" title="Resume">Resume</a>
                         
                     </div>
                 </section>
