@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+          My Resume/CV - Junjia Guo - Jeff&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://gjj930923.github.io/blog/2017/02/10/my resume/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/blog/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/blog/">Jeff&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/blog/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/blog/archives/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/blog/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/blog/about/">About Me</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/blog/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/blog/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/blog/tags/#Resume" title="Resume">Resume</a>
+                        
+                    </div>
+                    <h1>My Resume/CV - Junjia Guo</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Jeff Guo on
+                        2017-02-10
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="ABOUT-ME"><a href="#ABOUT-ME" class="headerlink" title="ABOUT ME"></a>ABOUT ME</h2><p><img src="http://ohllqfwf2.bkt.clouddn.com/2017/01/16/ab430f114e6c3e8d842910d31106f935.JPG/thumbnail.jpg" alt="My Photo" title="My Photo"><br>Name: <strong>Junjia Guo</strong><br>Email: <strong>jug44[AT]pitt[DOT]edu</strong><br>Objective Job: <strong>2017 Summer Internship (May to August)</strong><br>Current Location: Pittsburgh, PA<br>Degree Candidating: Master of Science in Information Science<br><a href="http://www.linkedin.com/in/JunjiaGuo" target="_blank" rel="external">My LinkedIn Page</a><br><a href="https://github.com/gjj930923" target="_blank" rel="external">My GitHub Page</a><br><a href="http://ohllqfwf2.bkt.clouddn.com/files/Resume%20-%20Junjia%20Guo.pdf" target="_blank" rel="external">My Resume/CV in PDF</a></p>
+<h2 id="PERSONAL-INTRODUCTION"><a href="#PERSONAL-INTRODUCTION" class="headerlink" title="PERSONAL INTRODUCTION"></a>PERSONAL INTRODUCTION</h2><p>I am the first year master student at the school of information science at the University of Pittsburgh, majoring in Information Science. Now I am seeking for the internship opportunities, available from May 2017 to August during the summer session. The internship will also be available after the session if the job location is in Pittsburgh.</p>
+<p>I graduated from South China University of Technology(SCUT), one of the well-known universities in China, and majored in software engineering. During the four-year period of study, I attended some social clubs to hold campus activities and manage them. I also finished some development by myself or with some partners in the campus and attended some internships in well-known companies as a fourth-year bachelor student. I obtained two scholarships and one honor as well.</p>
+<p>I am good at Java, PHP and MySQL, familiar with Apache, Linux, C++, python and R and I have several personal hobbies including running, body building, swimming, and badminton. Always embrace the future. Coding changes the world!</p>
+<h2 id="EDUCATION"><a href="#EDUCATION" class="headerlink" title="EDUCATION"></a>EDUCATION</h2><h3 id="MASTER-OF-SCIENCE"><a href="#MASTER-OF-SCIENCE" class="headerlink" title="MASTER OF SCIENCE"></a>MASTER OF SCIENCE</h3><p><a href="http://www.pitt.edu" target="_blank" rel="external">UNIVERSITY OF PITTSBURGH</a><br><a href="http://ischool.pitt.edu/" target="_blank" rel="external">School of Information Sciences</a><br>Sep 2016 - Dec 2017(exp)<br>Overall GPA: 3.81/4.0</p>
+<h3 id="BACHELOR-OF-ENGINEERING"><a href="#BACHELOR-OF-ENGINEERING" class="headerlink" title="BACHELOR OF ENGINEERING"></a>BACHELOR OF ENGINEERING</h3><p><a href="http://www.scut.edu.cn/" target="_blank" rel="external">SOUTH CHINA UNIVERSITY OF TECHNOLOGY</a><br><a href="http://www.scut.edu.cn/sse/" target="_blank" rel="external">School of Software Engineering</a><br>Sep 2012 - Jul 2016<br>2 scholarships for top 20% students.<br>1 Merit-Student Reward.</p>
+<h2 id="MAIN-COURSEWORK"><a href="#MAIN-COURSEWORK" class="headerlink" title="MAIN COURSEWORK"></a>MAIN COURSEWORK</h2><h3 id="GRADUATE"><a href="#GRADUATE" class="headerlink" title="GRADUATE"></a>GRADUATE</h3><p>INFO STORAGE &amp; RETRIEVAL<br>DATABASE MANAGEMENT<br>DATA MINING<br>DATA ANALYTICS<br>ADV TOPICS IN DATABASE MANAGEMENT<br>SPATIAL DATA ANALYTICS<br>INTRO TO NEURAL NETWORK<br>CLOUD COMPUTING (CMU)</p>
+<h3 id="UNDERGRADUATE"><a href="#UNDERGRADUATE" class="headerlink" title="UNDERGRADUATE"></a>UNDERGRADUATE</h3><p>SOFTWARE TESTING &amp; MAINTENANCE<br>INTRO TO MOBILE COMPUTING<br>COMPUTER NETWORK<br>DATA STRUCTURE &amp; ALGORITHMS<br>COMPUTATIONAL MODEL &amp; ALGORITHMIC TECHNIQUE</p>
+<h2 id="WORK-EXPERIENCE"><a href="#WORK-EXPERIENCE" class="headerlink" title="WORK EXPERIENCE"></a>WORK EXPERIENCE</h2><h3 id="PHP-DEVELOPER-INTERN"><a href="#PHP-DEVELOPER-INTERN" class="headerlink" title="PHP DEVELOPER INTERN"></a>PHP DEVELOPER INTERN</h3><p><a href="http://www.baiyangwang.com" target="_blank" rel="external">Qingdao Best Ocean Health Pharmacy Chain - Development Center(Guangzhou)</a><br>Mar 2016 – Apr 2016 | Guangzhou, China</p>
+<ul>
+<li>Responsible for the development of the backend and APIs of the e-commercial mall(for Android &amp; iOS), using CodeIgniter 3.0 Framework and the capacity of downloading swifted 200% during the two-month internship.</li>
+<li>Responsible for the combination of users’ profiles and addresses from the APP and the website (<a href="http://www.baiyangwang.com" target="_blank" rel="external">http://www.baiyangwang.com</a> in Chinese) so that users can user only one account to log in both the APP and the website.</li>
+<li>Improved the coupons management system.</li>
+<li>Worked based on PHP/HTML/JavaScript(jQuery)</li>
+</ul>
+<h3 id="SOFTWARE-DESIGN-ENGINEER-INTERN"><a href="#SOFTWARE-DESIGN-ENGINEER-INTERN" class="headerlink" title="SOFTWARE DESIGN ENGINEER INTERN"></a>SOFTWARE DESIGN ENGINEER INTERN</h3><p><a href="https://www.ericsson.com/" target="_blank" rel="external">Ericsson Mobile Data Applications Technology Research &amp; Development (Guangzhou) Co., Ltd.</a><br>Sep 2015 – Feb 2016 | Guangzhou, China</p>
+<ul>
+<li>Developed a Java EE application platform for business customers.</li>
+<li>Maintained each version of the published system, released the patches at the same time and new versions on a regular basis.</li>
+<li>Worked based on Linux/shell/JavaEE.</li>
+</ul>
+<h2 id="PROJECT-EXPERIENCES"><a href="#PROJECT-EXPERIENCES" class="headerlink" title="PROJECT EXPERIENCES"></a>PROJECT EXPERIENCES</h2><h3 id="GRADUATE-1"><a href="#GRADUATE-1" class="headerlink" title="GRADUATE"></a>GRADUATE</h3><h4 id="The-Enhanced-Search-Engine-of-Etsy-an-e-Commerce-Website"><a href="#The-Enhanced-Search-Engine-of-Etsy-an-e-Commerce-Website" class="headerlink" title="The Enhanced Search Engine of Etsy, an e-Commerce Website"></a>The Enhanced Search Engine of Etsy, an e-Commerce Website</h4><p>Sep 2016 – Dec 2016</p>
+<ul>
+<li>Enhancing the Etsy search engine enabling it to search items in Chinese and return the top 10 most relevant items.</li>
+<li>Using the Bing API to translate between Chinese and English and Etsy Restful API to gain search results.</li>
+<li>Using Java to process the input queries from users and implement the language model with Apache Lucene to return the top 10 ranking items.</li>
+<li>Scored 93/100 in the final project.</li>
+</ul>
+<h4 id="Pittsburgh-Bike-Sharing-Demand-Prediction"><a href="#Pittsburgh-Bike-Sharing-Demand-Prediction" class="headerlink" title="Pittsburgh Bike Sharing Demand Prediction"></a>Pittsburgh Bike Sharing Demand Prediction</h4><p>Sep 2016 – Dec 2016<br><a href="https://github.com/gjj930923/public-bike-prediction" target="_blank" rel="external">GitHub Code</a></p>
+<ul>
+<li>Using the history of bike sharing data as well as the history weather and holiday data to predict the bike sharing demands.</li>
+<li>Separating the data into training and testing sets and applying supervised and unsupervised learning methods, including the logistic regression, k-NN, k-means and SVM, to the data with R programming language.</li>
+<li>Scored 87/100 in the final project.</li>
+</ul>
+<h4 id="The-Development-of-an-e-Commerce-Website-Based-on-MySQL-and-PHP"><a href="#The-Development-of-an-e-Commerce-Website-Based-on-MySQL-and-PHP" class="headerlink" title="The Development of an e-Commerce Website Based on MySQL and PHP"></a>The Development of an e-Commerce Website Based on MySQL and PHP</h4><p>Sep 2016 – Dec 2016<br><a href="https://github.com/gjj930923/ecommerce" target="_blank" rel="external">GitHub Code</a></p>
+<ul>
+<li>Responsible for the demand analysis, the design of MySQL database and the implementation of all functions with PHP.</li>
+<li>Use Git to manage all group members’ codes and ThinkPHP to construct the framework of the website.</li>
+<li>Worked based on PHP/MySQL/CSS/HTML/Git.</li>
+</ul>
+<h3 id="UNDERGRADUATE-1"><a href="#UNDERGRADUATE-1" class="headerlink" title="UNDERGRADUATE"></a>UNDERGRADUATE</h3><h4 id="The-Development-of-Campus-Second-hand-Market-and-the-Campus-Navigation"><a href="#The-Development-of-Campus-Second-hand-Market-and-the-Campus-Navigation" class="headerlink" title="The Development of Campus Second-hand Market and the Campus Navigation"></a>The Development of Campus Second-hand Market and the Campus Navigation</h4><p>Jan 2016 – May 2016<br><a href="https://github.com/gjj930923/scuthelper" target="_blank" rel="external">GitHub Code</a></p>
+<ul>
+<li>Developed the whole project, including requirements analysis, database design, and front end (PC + phone) design, coding and testing.</li>
+<li>A simple recommendation system is included.</li>
+<li>Worked based on php/HTML/CSS/MySQL.</li>
+<li>The topic of my essay which candidates for bachelor’s degree.</li>
+</ul>
+<h4 id="“Guardian-of-Kids’-Eyes”-Development-of-the-Android-APP"><a href="#“Guardian-of-Kids’-Eyes”-Development-of-the-Android-APP" class="headerlink" title="“Guardian of Kids’ Eyes” - Development of the Android APP"></a>“Guardian of Kids’ Eyes” - Development of the Android APP</h4><p>Dec 2014 – Jan 2015</p>
+<ul>
+<li>Responsible for the integration of materials and making up the Android APP, with 3.5 curriculum credits and the members’ average points of 80+/100.</li>
+<li>The idea of its design was brought out by a post-graduate student majoring for preschool education, which fits the kids’ psychological characteristics.</li>
+</ul>
+<h4 id="School-of-Software-Engineering-Internship-Tracking-System-Improvement"><a href="#School-of-Software-Engineering-Internship-Tracking-System-Improvement" class="headerlink" title="School of Software Engineering Internship Tracking System Improvement"></a>School of Software Engineering Internship Tracking System Improvement</h4><p>Apr 2014 – Jul 2014</p>
+<ul>
+<li>Developed the project based on Java, maintained the original system and modified the bugs.</li>
+<li>Worked based on PHP/HTML.</li>
+</ul>
+<h4 id="Simulated-Intelligent-Household-System-based-on-Mobile-Applications"><a href="#Simulated-Intelligent-Household-System-based-on-Mobile-Applications" class="headerlink" title="Simulated Intelligent Household System based on Mobile Applications"></a>Simulated Intelligent Household System based on Mobile Applications</h4><p>Jul 2014 – Aug 2014</p>
+<ul>
+<li>Be mainly responsible for the development of Android application and database design.</li>
+<li>Worked based on C/ Android.</li>
+</ul>
+<h2 id="PROGRAMMING-SKILLS"><a href="#PROGRAMMING-SKILLS" class="headerlink" title="PROGRAMMING SKILLS"></a>PROGRAMMING SKILLS</h2><p><strong>PROFICIENT</strong><br>Java • PHP • MySQL • R • Android</p>
+<p><strong>FAMILIAR</strong><br>C++ • Linux • Python • Shell • Git • HTML • JavaScript</p>
+<h2 id="CAMPUS-EXPERIENCE"><a href="#CAMPUS-EXPERIENCE" class="headerlink" title="CAMPUS EXPERIENCE"></a>CAMPUS EXPERIENCE</h2><p><strong>Member of the Publicity Department</strong><br>The Campus IBM club | 2013</p>
+<p><strong>Executive Director of Information Center</strong><br>The Students’ Union | 2012-2014</p>
+<h2 id="PERSONAL-HOBBIES"><a href="#PERSONAL-HOBBIES" class="headerlink" title="PERSONAL HOBBIES"></a>PERSONAL HOBBIES</h2><p>Running • Body Building • Swimming • Badminton • Basketball</p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2017/02/10/my resume/"
+                    data-title="My Resume/CV - Junjia Guo"
+                    data-url="http://gjj930923.github.io/blog/2017/02/10/my resume/"
+                    data-images=""
+                    data-content="ABOUT MEName: Junjia GuoEmail: jug44[AT]pitt[DO... | Jeff&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/blog/2017/01/21/AWS S3 Useful awscli Operations at Linux/" data-toggle="tooltip" data-placement="top" title="AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2017/02/10/my resume/"
+                        data-title="My Resume/CV - Junjia Guo"
+                        data-url="http://gjj930923.github.io/blog/2017/02/10/my resume/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/blog/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/blog/tags/#Resume" title="Resume">Resume</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.pitt.edu" target="_blank">University of Pittsburgh</a></li>
+                    
+                        <li><a href="#" target="_blank">More</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'gjj930923';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/gjj930923">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Jeff&#39;s Blog 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/blog/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/blog/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/blog/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://gjj930923.github.io/blog/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-89426115-1';
+    var _gaDomain = 'undefined';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://gjj930923.github.io/blog/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
