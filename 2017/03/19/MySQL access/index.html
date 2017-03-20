@@ -13,11 +13,11 @@
 
     <title>
         
-          Jeff&#39;s Blog
+          【转】设置本地MySQL允许外部访问的方法 - Jeff&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://gjj930923.github.io/">
+    <link rel="canonical" href="http://gjj930923.github.io/2017/03/19/MySQL access/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,273 +147,137 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Jeff&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Make World Hello Again!</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#MySQL" title="MySQL">MySQL</a>
+                        
+                    </div>
+                    <h1>【转】设置本地MySQL允许外部访问的方法</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Jeff Guo on
+                        2017-03-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>sudo vim /etc/mysql/my.cnf<br>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+<h3 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h3><p>mysql -u root -p<br>输入密码<br>mysql&gt; use mysql;</p>
+<h3 id="查询host"><a href="#查询host" class="headerlink" title="查询host"></a>查询host</h3><p>mysql&gt; select user,host from user;</p>
+<h3 id="创建host"><a href="#创建host" class="headerlink" title="创建host"></a>创建host</h3><p>如果没有”%”这个host值,就执行下面这两句:<br>mysql&gt; update user set host=’%’ where user=’root’;<br>mysql&gt; flush privileges;</p>
+<h3 id="授权用户"><a href="#授权用户" class="headerlink" title="授权用户"></a>授权用户</h3><p>任意主机以用户root和密码mypwd连接到mysql服务器<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION;<br>mysql&gt; flush privileges;</p>
+<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’192.168.1.102’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION;<br>mysql&gt; flush privileges;</p>
+<p>出处：<br><a href="http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html" target="_blank" rel="external">http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html</a></p>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/2017/03/19/my resume/">
-        <h2 class="post-title">
-            My Resume/CV - Junjia Guo
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ABOUT MEName: Junjia GuoEmail: jug44[AT]pitt[DOT]eduObjective Job: 2017 Summer Internship (May to August)Current Location: Pittsburgh, PADegree Candidating: Master of Science in Information Science......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Jeff Guo on
-        2017-03-19
-    </p>
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2017/03/19/MySQL access/"
+                    data-title="【转】设置本地MySQL允许外部访问的方法"
+                    data-url="http://gjj930923.github.io/2017/03/19/MySQL access/"
+                    data-images=""
+                    data-content="修改配置文件sudo vim /etc/mysql/my.cnf把bind-address参数... | Jeff&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
 
-</div>
-<hr>
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/03/19/my resume/" data-toggle="tooltip" data-placement="top" title="My Resume/CV - Junjia Guo">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/" data-toggle="tooltip" data-placement="top" title="AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-<div class="post-preview">
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2017/03/19/MySQL access/"
+                        data-title="【转】设置本地MySQL允许外部访问的方法"
+                        data-url="http://gjj930923.github.io/2017/03/19/MySQL access/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
 
-    <a href="/2017/03/19/MySQL access/">
-        <h2 class="post-title">
-            【转】设置本地MySQL允许外部访问的方法
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            修改配置文件sudo vim /etc/mysql/my.cnf把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.
-登录数据库mysql -u root -p输入密码mysql&gt; use mysql;
-查询hostmysql&gt; select user,host from user;
-创建host如果没有”%”这个host值,就执行下面这两......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Jeff Guo on
-        2017-03-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/">
-        <h2 class="post-title">
-            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Install 安装：sudo apt-get install awscli
-Configuration 配置：aws configure
-File Operation 文件操作：123456789101112# Create a new bucket 新建存储桶aws s3 mb s3://bucketname# Browse the file list 查看文件列表aws s3 ls s......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Jeff Guo on
-        2017-01-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/12/22/Android 学习小结1/">
-        <h2 class="post-title">
-            Android 学习小结1
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            POST和GET请求发送设置模块官方设置文档保存和调用Preferences
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Jeff Guo on
-        2016-12-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
-        <h2 class="post-title">
-            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            提示找不到AVDCould not find INI file in $ANDROID_AVD_HOME nor in $HOME/.android/avd
-解决方案：~/.android/.avd 下有可能是空的，实际上AVD的具体配置文件是在/root/.android/.avd中，文件名诸如Nexus_7_API_23.ini。因此需要将~/.android下的.avd文件夹删除，再设......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Jeff Guo on
-        2016-12-22
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-
-                <!-- 如果开启评论功能 -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
-                            
-                            <a href="/tags/#AWS" title="AWS" rel="1">AWS</a>
-                            
-                        
-                            
-                            <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-                            
-                        
-                            
-                            <a href="/tags/#awscli" title="awscli" rel="1">awscli</a>
-                            
-                        
-                            
-                            <a href="/tags/#Android" title="Android" rel="2">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#MySQL" title="MySQL" rel="1">MySQL</a>
-                            
-                        
-                            
-                            <a href="/tags/#Resume" title="Resume" rel="1">Resume</a>
-                            
-                        
-                            
-                            <a href="/tags/#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
-                            
+                       
+                          <a class="tag" href="/tags/#MySQL" title="MySQL">MySQL</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.jpg" />
-                        
-
-                        
-                            <p>Master Student at University of Pittsburgh School of Computing Information</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/gjj930923">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -428,9 +292,69 @@ File Operation 文件操作：123456789101112# Create a new bucket 新建存储�
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'gjj930923';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
