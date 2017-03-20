@@ -213,10 +213,13 @@
             
         </h3>
         <div class="post-content-preview">
-            修改配置文件sudo vim /etc/mysql/my.cnf把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.
-登录数据库mysql -u root -p输入密码mysql&gt; use mysql;
+            修改配置文件sudo vim /etc/mysql/my.cnf
+把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.
+登录数据库mysql -u root -p
+#输入密码
+mysql &gt; use mysql;
 查询hostmysql&gt; select user,host from user;
-创建host如果没有”%”这个host值,就执行下面这两......
+创建host#如果没有&quot;%&quot......
         </div>
     </a>
     <p class="post-meta">

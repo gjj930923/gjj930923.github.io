@@ -191,13 +191,23 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>sudo vim /etc/mysql/my.cnf<br>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
-<h3 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h3><p>mysql -u root -p<br>输入密码<br>mysql&gt; use mysql;</p>
-<h3 id="查询host"><a href="#查询host" class="headerlink" title="查询host"></a>查询host</h3><p>mysql&gt; select user,host from user;</p>
-<h3 id="创建host"><a href="#创建host" class="headerlink" title="创建host"></a>创建host</h3><p>如果没有”%”这个host值,就执行下面这两句:<br>mysql&gt; update user set host=’%’ where user=’root’;<br>mysql&gt; flush privileges;</p>
-<h3 id="授权用户"><a href="#授权用户" class="headerlink" title="授权用户"></a>授权用户</h3><p>任意主机以用户root和密码mypwd连接到mysql服务器<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION;<br>mysql&gt; flush privileges;</p>
-<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’192.168.1.102’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION;<br>mysql&gt; flush privileges;</p>
-<p>出处：<br><a href="http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html" target="_blank" rel="external">http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html</a></p>
+                <h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><pre><code>sudo vim /etc/mysql/my.cnf
+</code></pre><p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+<h3 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h3><pre><code>mysql -u root -p
+#输入密码
+mysql &gt; use mysql;
+</code></pre><h3 id="查询host"><a href="#查询host" class="headerlink" title="查询host"></a>查询host</h3><pre><code>mysql&gt; select user,host from user;
+</code></pre><h3 id="创建host"><a href="#创建host" class="headerlink" title="创建host"></a>创建host</h3><pre><code>#如果没有&quot;%&quot;这个host值,就执行下面这两句:
+mysql&gt; update user set host=&apos;%&apos; where user=&apos;root&apos;;
+mysql&gt; flush privileges;
+</code></pre><h3 id="授权用户"><a href="#授权用户" class="headerlink" title="授权用户"></a>授权用户</h3><pre><code>#任意主机以用户root和密码mypwd连接到mysql服务器
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;mypwd&apos; WITH GRANT OPTION;
+mysql&gt; flush privileges;
+
+#IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;myuser&apos;@&apos;192.168.1.102&apos; IDENTIFIED BY &apos;mypwd&apos; WITH GRANT OPTION; 
+mysql&gt; flush privileges;
+</code></pre><p>出处：<br><a href="http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html" target="_blank" rel="external">http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html</a></p>
 
 
                 <hr>
@@ -211,7 +221,8 @@
                     data-title="【转】设置本地MySQL允许外部访问的方法"
                     data-url="http://gjj930923.github.io/2017/03/19/MySQL access/"
                     data-images=""
-                    data-content="修改配置文件sudo vim /etc/mysql/my.cnf把bind-address参数... | Jeff&#39;s Blog " >
+                    data-content="修改配置文件sudo vim /etc/mysql/my.cnf
+把bind-address参... | Jeff&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
