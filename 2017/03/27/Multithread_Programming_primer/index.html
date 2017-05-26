@@ -225,11 +225,22 @@
 
                 
                 
-                    <!-- uyan 评论框 start-->
-                    <div class="comment">
-                        <div id="uyan_frame"></div>
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODgzOC81NDA4">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') { return; }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
                     </div>
-                    <!-- uyan 评论框 end -->
                 
 
             </div>
@@ -282,18 +293,7 @@
 
 
 
-    <!-- uyan 公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES * * */
-        var uyan_id = "2134762";
-        
-        (function() {
-            var uyan = document.createElement('script'); uyan.type = 'text/javascript'; uyan.async = true;
-            uyan.src = '//v2.uyan.cc/code/uyan.js?uid=' + uyan_id;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(uyan);
-        })();
-    <!-- uyan 公共JS代码 end -->
-    </script>
+
 
 
 
