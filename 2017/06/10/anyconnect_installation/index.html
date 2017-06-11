@@ -13,11 +13,11 @@
 
     <title>
         
-          Junjia&#39;s Blog
+          配置 Cisco AnyConnect VPN 客户端 - Junjia&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://gjj930923.github.io/">
+    <link rel="canonical" href="http://gjj930923.github.io/2017/06/10/anyconnect_installation/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,377 +147,145 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>北美嘉哥</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">不积跬步，无以至千里；不积小流，无以成江海。</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
+                        
+                    </div>
+                    <h1>配置 Cisco AnyConnect VPN 客户端</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Junjia Guo on
+                        2017-06-10
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ol>
+<li>打开 <code>anyconnect-win-3.1.05160-pre-deploy-k9.iso</code> 文件，运行<code>anyconnect-win-3.1.05160-pre-deploy-k9.msi</code>。</li>
+<li>按照默认流程进行安装。</li>
+<li>导入用户证书。直接打开.p12文件，存储位置选择本地计算机，下一步点击后会请求管理员权限，两次下一步后输入密码，然后一直下一步即导入成功。</li>
+<li>打开AnyConnect，连接界面左下角进入设置，取消图中红圈的选项，然后退出。<br><img src="http://ohllqfwf2.bkt.clouddn.com/2017/06/10/52f2d6ecf839799eba2eb539a7b6060f.PNG" alt="cisco3.PNG" title="cisco3.PNG"></li>
+<li>输入VPN IP地址含端口（IP地址:端口），点击Connect。</li>
+<li>第一次连接过程会提示不信任VPN。勾选下图内容然后点Connect Anyway即可。<br><img src="http://ohllqfwf2.bkt.clouddn.com/2017/06/10/c2aa55f7afb0b546386924fd223be187.PNG" alt="cisco2.PNG" title="cisco2.PNG"></li>
+<li>连接时如果之前连接wifi，则会显示已断开，此属正常现象。</li>
+<li>可能出现的异常：连接时出现以下错误提示：<blockquote>
+<p>The service provider in your current location is restricting access to the Internet. You need to log on with the service provider before you can establish a VPN session. You can try this by visiting any website with your browser.</p>
+</blockquote>
+</li>
+</ol>
+<p>解决方式：打开“运行”，输入“services.msc”，确定，关闭“Internet Connection Sharing (ICS)”服务，重启“Cisco AnyConnect Secure Mobility Agent”。然后重新连接。</p>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ol>
+<li>安装AnyConnect。</li>
+<li>进入右上角菜单，单击设置</li>
+<li>取消勾选“阻止不信任的服务器”选项。</li>
+<li>回到主界面，点击“连接”，点击“添加新的VPN连接”</li>
+<li>输入服务器地址含端口（IP地址:端口）</li>
+<li>进入“高级首选项” - “证书” - “Import”（下方） - “网络位置（URI）”，在“证书URI”中输入证书URI地址，含http。确定后还需要输入证书密码。</li>
+<li>确定后回到主界面，打开AnyConnect VPN，即可建立连接。出现下图提示按下图点击继续和确定即可。<br><img src="http://ohllqfwf2.bkt.clouddn.com/2017/06/11/3cc5017195464879630fbe62b55c49e8.PNG" alt="android3.PNG" title="android3.PNG"><br><img src="http://ohllqfwf2.bkt.clouddn.com/2017/06/11/a55975b26bf99b5fda86b452235afe48.PNG" alt="android4.PNG" title="android4.PNG"></li>
+</ol>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><ol>
+<li>App Store下载AnyConnect。</li>
+<li>下方菜单选“诊断” - “证书” - ”User“ - ”导入用户证书……“，输入证书URL地址含http。确定后还需要输入证书密码。</li>
+<li>下方菜单选”设置“ - 取消”阻止不信任的服务器“。</li>
+<li>下方菜单点”主页“ - 连接 - 添加VPN连接……，输入服务器地址含端口（IP地址:端口） - 保存。</li>
+<li>回到主页打开AnyConnect VPN即成功连接。</li>
+</ol>
+<h3 id="Mac-OS"><a href="#Mac-OS" class="headerlink" title="Mac OS"></a>Mac OS</h3><p>TO BE FINISHED.</p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>TO BE FINISHED.</p>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/2017/06/10/anyconnect_installation/">
-        <h2 class="post-title">
-            配置 Cisco AnyConnect VPN 客户端
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Windows
-打开 anyconnect-win-3.1.05160-pre-deploy-k9.iso 文件，运行anyconnect-win-3.1.05160-pre-deploy-k9.msi。
-按照默认流程进行安装。
-导入用户证书。直接打开.p12文件，存储位置选择本地计算机，下一步点击后会请求管理员权限，两次下一步后输入密码，然后一直下一步即导入成功。
-打开AnyConnect......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2017-06-10
-    </p>
+                
 
-</div>
-<hr>
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/06/04/ipsec_l2tp_vpn_client/" data-toggle="tooltip" data-placement="top" title="【转】配置 IPsec/L2TP VPN 客户端">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-<div class="post-preview">
+                
 
-    <a href="/2017/06/04/ipsec_l2tp_vpn_client/">
-        <h2 class="post-title">
-            【转】配置 IPsec/L2TP VPN 客户端
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-平台名称
-Windows
-OS X (macOS)
-Android
-iOS (iPhone/iPad)
-Chromebook
-Windows Phone
-Linux
+                
+                
+                    <!-- livere 评论框 start -->
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODgzOC81NDA4">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
 
+                           if (typeof LivereTower === 'function') { return; }
 
-故障排除
-Windows 错误 809
-Windows 错误 628
-Android 6 and 7
-Chromebook
-其它错误
-额外的步骤
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
 
-
-
-WindowsWindows 10 and 8.x
-右键单击系统托盘中......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2017-06-04
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/05/26/Comment_about_shuping_speech/">
-        <h2 class="post-title">
-            马里兰大学杨舒平毕业典礼演讲到底是怎么回事
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            毕业了，马里兰大学的杨舒平菜馆给毕业生们送上了一份毕业大餐，就餐的有美国毕业生还有一些中国毕业生。首先是前菜，杨大厨准备了两道菜：美国空气和中国空气。美国空气很甜很美味，还有着淡淡的奢华感，大家都很喜欢。可当中国人吃起中国空气这道菜时，大家却觉得很不新鲜，很不是滋味，也坏了他们的胃口。然后主菜做好了，大厨送上了生命、自由和对幸福渴望，以及洛杉矶暮光豪华套餐。美国人觉得这些菜几乎天天吃，没什么......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2017-05-26
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/03/27/Multithread_Programming_primer/">
-        <h2 class="post-title">
-            【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            基本原理每个java对象都有一把锁， 当有多个线程同时访问共享资源的时候， 需要synchronized 来控制安全性， synchronized 分 synchronized 方法 和synchronized块，使用synchronized块时， 一定要显示的获得该对象的锁（如synchronized（object))而方法则不需要。java的内存模型是对每一个进程有一个主内存， 每个线程......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2017-03-27
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/03/19/MySQL access/">
-        <h2 class="post-title">
-            【转】设置本地MySQL允许外部访问的方法
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            修改配置文件sudo vim /etc/mysql/my.cnf
-把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.
-登录数据库mysql -u root -p
-#输入密码
-mysql &gt; use mysql;
-查询hostmysql&gt; select user,host from user;
-创建host#如果没有&quot;%&quot......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2017-03-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/">
-        <h2 class="post-title">
-            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Install 安装：sudo apt-get install awscli
-Configuration 配置：aws configure
-File Operation 文件操作：123456789101112# Create a new bucket 新建存储桶aws s3 mb s3://bucketname# Browse the file list 查看文件列表aws s3 ls s......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2017-01-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/12/22/Android 学习小结1/">
-        <h2 class="post-title">
-            Android 学习小结1
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            POST和GET请求发送设置模块官方设置文档保存和调用Preferences
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2016-12-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
-        <h2 class="post-title">
-            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            提示找不到AVDCould not find INI file in $ANDROID_AVD_HOME nor in $HOME/.android/avd
-解决方案：~/.android/.avd 下有可能是空的，实际上AVD的具体配置文件是在/root/.android/.avd中，文件名诸如Nexus_7_API_23.ini。因此需要将~/.android下的.avd文件夹删除，再设......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Junjia Guo on
-        2016-12-22
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-
-                <!-- 如果开启评论功能 -->
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- livere 评论框 end -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
-                            
-                            <a href="/tags/#AWS" title="AWS" rel="1">AWS</a>
-                            
-                        
-                            
-                            <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-                            
-                        
-                            
-                            <a href="/tags/#awscli" title="awscli" rel="1">awscli</a>
-                            
-                        
-                            
-                            <a href="/tags/#Android" title="Android" rel="2">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#中美思考" title="中美思考" rel="1">中美思考</a>
-                            
-                        
-                            
-                            <a href="/tags/#Java" title="Java" rel="1">Java</a>
-                            
-                        
-                            
-                            <a href="/tags/#多线程" title="多线程" rel="1">多线程</a>
-                            
-                        
-                            
-                            <a href="/tags/#MySQL" title="MySQL" rel="1">MySQL</a>
-                            
-                        
-                            
-                            <a href="/tags/#VPN" title="VPN" rel="2">VPN</a>
-                            
-                        
-                            
-                            <a href="/tags/#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
-                            
+                       
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.jpg" />
-                        
-
-                        
-                            <p>匹兹堡大学计算信息学院硕士</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/gjj930923">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -532,9 +300,55 @@ File Operation 文件操作：123456789101112# Create a new bucket 新建存储�
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
