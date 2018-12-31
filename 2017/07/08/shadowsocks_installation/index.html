@@ -13,11 +13,11 @@
 
     <title>
         
-          About Me - Junjia&#39;s Blog
+          【转】配置 Shadow Socks 客户端 - Junjia&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://gjj930923.github.io/about/">
+    <link rel="canonical" href="http://gjj930923.github.io/2017/07/08/shadowsocks_installation/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,162 +147,142 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About Me</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">不积跬步，无以至千里；不积小流，无以成江海。</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
+                        
+                    </div>
+                    <h1>【转】配置 Shadow Socks 客户端</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Junjia Guo on
+                        2017-07-08
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <p>A master student at <a href="http://ischool.pitt.edu/" target="_blank" rel="external">the School of Information Science in Pitt</a>. </p>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><ol>
+<li>首先通过<a href="https://github.com/shadowsocks/shadowsocks-iOS/releases/download/2.6.3/ShadowsocksX-2.6.3.dmg" target="_blank" rel="external">这个连接</a>下载软件并安装</li>
+<li>启动app后，打开服务器设定<br><img src="http://ohllqfwf2.bkt.clouddn.com/2017/07/08/5eda951b8db2b7814669299a0f8bbb2c.jpg" alt="ss1.jpg" title="ss1.jpg"></li>
+<li>下图中，地址和密码填你刚刚设置启动文件时所填写的，其他不用改。点确定。<br><img src="http://ohllqfwf2.bkt.clouddn.com/2017/07/08/9e87105ace499ddd7bb617a295a57166.jpg" alt="ss2.jpg" title="ss2.jpg"></li>
+<li>试试google一下。</li>
+</ol>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ol>
+<li>通过<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.4/Shadowsocks-4.0.4.zip" target="_blank" rel="external">这个链接</a>下载客户端</li>
+<li>解压之后，可能发现无法打开软件。弹出的提示如果提到.NET Framwork, 说明你需要安装新的.NET Framework. 下载4.6.2版本的<a href="https://www.microsoft.com/en-us/download/details.aspx?id=53344&amp;desc=dotnet462" target="_blank" rel="external">.NET Framework</a></li>
+<li>安装后，再打开shadowsocks客户端，参考Mac客户端的设置，填写ip地址、端口、加密算法、密码等信息。其他不用改，点击确定。</li>
+<li>然后在右下角的工具栏里，找到shadowsocks, 右键单击，选择启动系统代理。</li>
+<li>重启浏览器，google一下，看看你可以飞了没有。</li>
+</ol>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><ol>
+<li>App Store下载 Waterdrop - Shadowsocks Client for iOS。</li>
+<li>参考Mac客户端的设置，填写ip地址（Server）、端口(Port)、密码(Password)等信息,其他不用改。Remarks名称随意填。出现添加VPN的提示框请点击允许。</li>
+<li>打开google，看看你可以飞了没有。</li>
+</ol>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ol>
+<li>通过<a href="https://github.com/shadowsocks/shadowsocks-android/releases/download/v4.1.8/shadowsocks-nightly-4.1.8.apk" target="_blank" rel="external">这个链接</a>下载shadowsocks App，并安装。</li>
+<li>进入app后，点击右上角+号，选择“手动设置”，参考Mac客户端的设置方法，填写ip地址、端口、密码等信息，其他不用改。</li>
+<li>点击我信任此应用并确认</li>
+<li>点击右下角的纸飞机图标，你就可以飞了。</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>Source: <a href="https://mp.weixin.qq.com/s/lT9-311rdmdBklf3T9QY5g" target="_blank" rel="external">https://mp.weixin.qq.com/s/lT9-311rdmdBklf3T9QY5g</a></p>
 
 
-                <!-- 如果开启评论功能 -->
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/12/22/Android 学习小结2/" data-toggle="tooltip" data-placement="top" title="Android 学习小结1">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/06/10/anyconnect_installation/" data-toggle="tooltip" data-placement="top" title="配置 Cisco AnyConnect VPN 客户端">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                
+                    <!-- livere 评论框 start -->
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODgzOC81NDA4">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') { return; }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- livere 评论框 end -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
-                            
-                            <a href="/tags/#Android" title="Android" rel="3">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#AWS" title="AWS" rel="1">AWS</a>
-                            
-                        
-                            
-                            <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-                            
-                        
-                            
-                            <a href="/tags/#awscli" title="awscli" rel="1">awscli</a>
-                            
-                        
-                            
-                            <a href="/tags/#MySQL" title="MySQL" rel="1">MySQL</a>
-                            
-                        
-                            
-                            <a href="/tags/#中美思考" title="中美思考" rel="1">中美思考</a>
-                            
-                        
-                            
-                            <a href="/tags/#VPN" title="VPN" rel="3">VPN</a>
-                            
-                        
-                            
-                            <a href="/tags/#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
-                            
-                        
-                            
-                            <a href="/tags/#Java" title="Java" rel="1">Java</a>
-                            
-                        
-                            
-                            <a href="/tags/#多线程" title="多线程" rel="1">多线程</a>
-                            
+                       
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.jpg" />
-                        
-
-                        
-                            <p>匹兹堡大学计算信息学院硕士</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/gjj930923">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -317,9 +297,55 @@
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->

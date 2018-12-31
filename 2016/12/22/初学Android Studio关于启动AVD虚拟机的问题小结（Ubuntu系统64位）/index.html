@@ -13,11 +13,11 @@
 
     <title>
         
-          About Me - Junjia&#39;s Blog
+          初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位） - Junjia&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://gjj930923.github.io/about/">
+    <link rel="canonical" href="http://gjj930923.github.io/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,162 +147,124 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About Me</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">不积跬步，无以至千里；不积小流，无以成江海。</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
+                        
+                          <a class="tag" href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>
+                        
+                    </div>
+                    <h1>初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Junjia Guo on
+                        2016-12-22
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <p>A master student at <a href="http://ischool.pitt.edu/" target="_blank" rel="external">the School of Information Science in Pitt</a>. </p>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="提示找不到AVD"><a href="#提示找不到AVD" class="headerlink" title="提示找不到AVD"></a><a href="http://stackoverflow.com/questions/27537578/could-not-find-ini-file-in-android-avd-home-nor-in-home-android-avd" target="_blank" rel="external">提示找不到AVD</a></h2><pre><code>Could not find INI file in $ANDROID_AVD_HOME nor in $HOME/.android/avd
+</code></pre><p>解决方案：<code>~/.android/.avd</code> 下有可能是空的，实际上AVD的具体配置文件是在<code>/root/.android/.avd</code>中，文件名诸如<code>Nexus_7_API_23.ini</code>。因此需要将<code>~/.android</code>下的<code>.avd</code>文件夹删除，再设置软链连接到<code>/root/.android/.avd</code>。</p>
+<p>Terminal 操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rm ~/.android/.avd</div><div class="line">$ sudo ln -s /root/.android/.avd ~/.android/.avd</div></pre></td></tr></table></figure></p>
+<h2 id="X-GLXIsDirect错误"><a href="#X-GLXIsDirect错误" class="headerlink" title="X_GLXIsDirect错误"></a><a href="http://android.stackexchange.com/questions/145437/reinstall-avd-on-ubuntu-16-04" target="_blank" rel="external">X_GLXIsDirect错误</a></h2><p>报错输出内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Minor opcode of failed request:  6 (X_GLXIsDirect)</div><div class="line">Serial number of failed request:  48</div><div class="line">Current serial number in output stream:  47</div><div class="line">libGL error: unable to load driver: swrast_dri.so</div><div class="line">libGL error: failed to load driver: swrast</div><div class="line">X Error of failed request:  GLXBadContext</div><div class="line">Major opcode of failed request:  155 (GLX)</div><div class="line">Minor opcode of failed request:  6 (X_GLXIsDirect)</div><div class="line">Serial number of failed request:  48</div><div class="line">Current serial number in output stream:  47</div><div class="line">libGL error: unable to load driver: swrast_dri.so</div><div class="line">libGL error: failed to load driver: swrast</div><div class="line">X Error of failed request:  BadValue (integer parameter out of range for operation)</div><div class="line">Major opcode of failed request:  155 (GLX)</div><div class="line">Minor opcode of failed request:  24 (X_GLXCreateNewContext)</div><div class="line">Value in failed request:  0x0</div><div class="line">Serial number of failed request:  32</div><div class="line">Current serial number in output stream:  33</div></pre></td></tr></table></figure></p>
+<p>解决方案：<br>备份AndroidSDK自带lib64stc++6包，使用ubuntu软件库的lib64stc++6代替并安装mesa-utils。<br>Terminal 操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install lib64stdc++6</div><div class="line">$ cd ~/Android/Sdk/tools/lib64/libstdc++</div><div class="line">$ mv libstdc++.so.6 libstdc++.so.6.original</div><div class="line">$ ln -s /usr/lib64/libstdc++.so.6 ~/Android/Sdk/tools/lib64/libstdc++</div><div class="line">$ sudo apt-get install mesa-utils</div></pre></td></tr></table></figure></p>
+<h2 id="Could-not-create-GLES-2-x-Pbuffer"><a href="#Could-not-create-GLES-2-x-Pbuffer" class="headerlink" title="Could not create GLES 2.x Pbuffer!"></a><a href="http://stackoverflow.com/questions/30686324/error-while-running-android-application-could-not-initialize-opengles-emulatio" target="_blank" rel="external">Could not create GLES 2.x Pbuffer!</a></h2><p>错误提示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">failed to create drawable</div><div class="line">getGLES2ExtensionString: Could not create GLES 2.x Pbuffer!</div><div class="line">Failed to obtain GLES 2.x extensions string!</div><div class="line">Could not initialize emulated framebuffer</div><div class="line">emulator: Listening for console connections on port: 5554</div><div class="line">emulator: Serial number of this emulator (for ADB): emulator-5554</div><div class="line">emulator: ERROR: Could not initialize OpenglES emulation, use &apos;-gpu off&apos; to disable it.</div></pre></td></tr></table></figure></p>
+<p>解决方案：<br>在Android Studio中进入AVD Manager，编辑相应的AVD设备，在Emulated Performance中选择<code>Software GLES2.0</code>。保存并重启即可。</p>
 
 
-                <!-- 如果开启评论功能 -->
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/12/22/Android 学习小结1/" data-toggle="tooltip" data-placement="top" title="Android 学习小结1">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+                
+                    <!-- livere 评论框 start -->
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODgzOC81NDA4">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') { return; }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- livere 评论框 end -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
                         
-                            
-                            <a href="/tags/#Android" title="Android" rel="3">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#AWS" title="AWS" rel="1">AWS</a>
-                            
-                        
-                            
-                            <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-                            
-                        
-                            
-                            <a href="/tags/#awscli" title="awscli" rel="1">awscli</a>
-                            
-                        
-                            
-                            <a href="/tags/#MySQL" title="MySQL" rel="1">MySQL</a>
-                            
-                        
-                            
-                            <a href="/tags/#中美思考" title="中美思考" rel="1">中美思考</a>
-                            
-                        
-                            
-                            <a href="/tags/#VPN" title="VPN" rel="3">VPN</a>
-                            
-                        
-                            
-                            <a href="/tags/#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
-                            
-                        
-                            
-                            <a href="/tags/#Java" title="Java" rel="1">Java</a>
-                            
-                        
-                            
-                            <a href="/tags/#多线程" title="多线程" rel="1">多线程</a>
-                            
+                          <a class="tag" href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.jpg" />
-                        
-
-                        
-                            <p>匹兹堡大学计算信息学院硕士</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/gjj930923">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -317,9 +279,55 @@
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->

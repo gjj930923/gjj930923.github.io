@@ -13,11 +13,11 @@
 
     <title>
         
-          About Me - Junjia&#39;s Blog
+          【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用 - Junjia&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://gjj930923.github.io/about/">
+    <link rel="canonical" href="http://gjj930923.github.io/2017/03/27/Multithread_Programming_primer/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,162 +147,134 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About Me</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">不积跬步，无以至千里；不积小流，无以成江海。</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
+                        
+                          <a class="tag" href="/tags/#多线程" title="多线程">多线程</a>
+                        
+                    </div>
+                    <h1>【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Junjia Guo on
+                        2017-03-27
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <p>A master student at <a href="http://ischool.pitt.edu/" target="_blank" rel="external">the School of Information Science in Pitt</a>. </p>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>每个java对象都有一把锁， 当有多个线程同时访问共享资源的时候， 需要synchronized 来控制安全性， synchronized 分 synchronized 方法 和synchronized块，使用synchronized块时， 一定要显示的获得该对象的锁（如synchronized（object))而方法则不需要。<br>java的内存模型是对每一个进程有一个主内存， 每个线程有自己的内存， 他们从主内存中取数据， 然后计算， 再存入主内存中。<br>并发问题如下：如果多个线程同事操作同一数据， A线程从主内存中取的I的值为1， 然后进行加1操作， 这时B线程也取I的值， 进行加2操作， 然后A存入2到主内存中， B也存入， 这样就覆盖了A的值（同数据库中的并发问题一样）。</p>
+<h3 id="使用机制"><a href="#使用机制" class="headerlink" title="使用机制"></a>使用机制</h3><h4 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># 代码块形式</div><div class="line">private Object obj = new Object();//自定义同步锁</div><div class="line">synchronized(obj) &#123;</div><div class="line">		while(!condition) &#123;</div><div class="line">			obj.wait();</div><div class="line">	&#125;</div><div class="line">	obj.doSomething();</div><div class="line">&#125;</div><div class="line"></div><div class="line"># 函数形式</div><div class="line">public synchronized void change() &#123;</div><div class="line">	while(!condition)&#123;</div><div class="line">		wait();</div><div class="line">	&#125;</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当线程A获得了obj锁后，发现条件condition不满足，无法继续下一处理，于是线程A就wait() , 放弃对象锁。<br>之后在另一线程B中，如果B更改了某些条件，使得线程A的condition条件满足了，就可以唤醒线程A：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">synchronized</span>(obj) &#123;</div><div class="line">	condition = <span class="keyword">true</span>;</div><div class="line">	obj.notify();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="概念注意"><a href="#概念注意" class="headerlink" title="概念注意"></a>概念注意</h4><ol>
+<li>调用<code>obj</code>的<code>wait()</code>, <code>notify()</code>方法前，必须获得obj锁，也就是必须写在<code>synchronized(obj) {…}</code> 代码段内。</li>
+<li>调用<code>obj.wait()</code>后，线程A就释放了<code>obj</code>的锁，否则线程B无法获得<code>obj</code>锁，也就无法在<code>synchronized(obj) {…}</code> 代码段内唤醒A。</li>
+<li>当<code>obj.wait()</code>方法返回后，线程A需要再次获得<code>obj</code>锁，才能继续执行。</li>
+<li>如果A1,A2,A3都在<code>obj.wait()</code>，则B调用<code>obj.notify()</code>只能唤醒A1,A2,A3中的一个（具体哪一个由JVM决定）。</li>
+<li><code>obj.notifyAll()</code>则能全部唤醒A1,A2,A3，但是要继续执行<code>obj.wait()</code>的下一条语句，必须获得<code>obj</code>锁，因此，A1,A2,A3只有一个有机会获得锁继续执行，例如A1，其余的需要等待A1释放<code>obj</code>锁之后才能继续执行。</li>
+<li>当B调用<code>obj.notify/notifyAll</code>的时候，B正持有<code>obj</code>锁，因此，A1,A2,A3虽被唤醒，但是仍无法获得<code>obj</code>锁。直到B退出<code>synchronized</code>块，释放obj锁后，A1,A2,A3中的一个才有机会获得锁继续执行。</li>
+<li>JAVA中规定对非FLOAT, LONG的原始类型的取和存操作为原子操作。 其实就是对一个字（32位）的取，存位原始操作， 因为FLOAT, LONG为两个字节的长度， 所以其取， 存为非原子操作。 如果想把他们也变为原子操作， 可以用<code>volatile</code>关键字来修饰.</li>
+</ol>
+<p>###<br>出处：<br><a href="http://www.cnblogs.com/adamzuocy/archive/2010/03/08/1680851.html" target="_blank" rel="external">http://www.cnblogs.com/adamzuocy/archive/2010/03/08/1680851.html</a><br><a href="http://blog.csdn.net/weizhaozhe/article/details/3922647" target="_blank" rel="external">http://blog.csdn.net/weizhaozhe/article/details/3922647</a></p>
 
 
-                <!-- 如果开启评论功能 -->
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/05/26/Comment_about_shuping_speech/" data-toggle="tooltip" data-placement="top" title="马里兰大学杨舒平毕业典礼演讲到底是怎么回事">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/03/19/MySQL access/" data-toggle="tooltip" data-placement="top" title="【转】设置本地MySQL允许外部访问的方法">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                
+                    <!-- livere 评论框 start -->
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODgzOC81NDA4">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') { return; }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- livere 评论框 end -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
                         
-                            
-                            <a href="/tags/#Android" title="Android" rel="3">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#AWS" title="AWS" rel="1">AWS</a>
-                            
-                        
-                            
-                            <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-                            
-                        
-                            
-                            <a href="/tags/#awscli" title="awscli" rel="1">awscli</a>
-                            
-                        
-                            
-                            <a href="/tags/#MySQL" title="MySQL" rel="1">MySQL</a>
-                            
-                        
-                            
-                            <a href="/tags/#中美思考" title="中美思考" rel="1">中美思考</a>
-                            
-                        
-                            
-                            <a href="/tags/#VPN" title="VPN" rel="3">VPN</a>
-                            
-                        
-                            
-                            <a href="/tags/#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
-                            
-                        
-                            
-                            <a href="/tags/#Java" title="Java" rel="1">Java</a>
-                            
-                        
-                            
-                            <a href="/tags/#多线程" title="多线程" rel="1">多线程</a>
-                            
+                          <a class="tag" href="/tags/#多线程" title="多线程">多线程</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.jpg" />
-                        
-
-                        
-                            <p>匹兹堡大学计算信息学院硕士</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/gjj930923">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -317,9 +289,55 @@
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->

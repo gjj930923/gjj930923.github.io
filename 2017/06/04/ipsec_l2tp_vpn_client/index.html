@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          【转】配置 IPsec/L2TP VPN 客户端 - Junjia&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://gjj930923.github.io/2017/06/04/ipsec_l2tp_vpn_client/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">北美嘉哥</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About Me</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archives/">Archives</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
+                        
+                    </div>
+                    <h1>【转】配置 IPsec/L2TP VPN 客户端</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Junjia Guo on
+                        2017-06-04
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <ul>
+<li>平台名称<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#os-x">OS X (macOS)</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#ios">iOS (iPhone/iPad)</a></li>
+<li><a href="#chromebook">Chromebook</a></li>
+<li><a href="#windows-phone">Windows Phone</a></li>
+<li><a href="#linux">Linux</a></li>
+</ul>
+</li>
+<li><a href="#故障排除">故障排除</a><ul>
+<li><a href="#windows-错误-809">Windows 错误 809</a></li>
+<li><a href="#windows-错误-628">Windows 错误 628</a></li>
+<li><a href="#android-6-and-7">Android 6 and 7</a></li>
+<li><a href="#chromebook">Chromebook</a></li>
+<li><a href="#其它错误">其它错误</a></li>
+<li><a href="#额外的步骤">额外的步骤</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="Windows-10-and-8-x"><a href="#Windows-10-and-8-x" class="headerlink" title="Windows 10 and 8.x"></a>Windows 10 and 8.x</h3><ol>
+<li>右键单击系统托盘中的无线/网络图标。</li>
+<li>选择 <strong>打开网络与共享中心</strong>。</li>
+<li>单击 <strong>设置新的连接或网络</strong>。</li>
+<li>选择 <strong>连接到工作区</strong>，然后单击 <strong>下一步</strong>。</li>
+<li>单击 <strong>使用我的Internet连接 (VPN)</strong>。</li>
+<li>在 <strong>Internet地址</strong> 字段中输入<code>VPN 服务器 IP</code>。</li>
+<li>在 <strong>目标名称</strong> 字段中输入任意内容。单击 <strong>创建</strong>。</li>
+<li>返回 <strong>网络与共享中心</strong>。单击左侧的 <strong>更改适配器设置</strong>。</li>
+<li>右键单击新创建的 VPN 连接，并选择 <strong>属性</strong>。</li>
+<li>单击 <strong>安全</strong> 选项卡，从 <strong>VPN 类型</strong> 下拉菜单中选择 “使用 IPsec 的第 2 层隧道协议 (L2TP/IPSec)”。</li>
+<li>单击 <strong>允许使用这些协议</strong>。确保选中 “质询握手身份验证协议 (CHAP)” 复选框。</li>
+<li>单击 <strong>高级设置</strong> 按钮。</li>
+<li>单击 <strong>使用预共享密钥作身份验证</strong> 并在 <strong>密钥</strong> 字段中输入<code>VPN IPsec PSK</code>。</li>
+<li>单击 <strong>确定</strong> 关闭 <strong>高级设置</strong>。</li>
+<li>单击 <strong>确定</strong> 保存 VPN 连接的详细信息。</li>
+</ol>
+<p><strong>注：</strong> <strong>在首次连接之前需要修改一次注册表。请参见</strong><a href="#windows-错误-809">Windows 错误 809</a>。</p>
+<h3 id="Windows-7-Vista-and-XP"><a href="#Windows-7-Vista-and-XP" class="headerlink" title="Windows 7, Vista and XP"></a>Windows 7, Vista and XP</h3><ol>
+<li>单击开始菜单，选择控制面板。</li>
+<li>进入 <strong>网络和Internet</strong> 部分。</li>
+<li>单击 <strong>网络与共享中心</strong>。</li>
+<li>单击 <strong>设置新的连接或网络</strong>。</li>
+<li>选择 <strong>连接到工作区</strong>，然后单击 <strong>下一步</strong>。</li>
+<li>单击 <strong>使用我的Internet连接 (VPN)</strong>。</li>
+<li>在 <strong>Internet地址</strong> 字段中输入<code>你的 VPN 服务器 IP</code>。</li>
+<li>在 <strong>目标名称</strong> 字段中输入任意内容。</li>
+<li>选中 <strong>现在不连接；仅进行设置以便稍后连接</strong> 复选框。</li>
+<li>单击 <strong>下一步</strong>。</li>
+<li>在 <strong>用户名</strong> 字段中输入<code>你的 VPN 用户名</code>。</li>
+<li>在 <strong>密码</strong> 字段中输入<code>你的 VPN 密码</code>。</li>
+<li>选中 <strong>记住此密码</strong> 复选框。</li>
+<li>单击 <strong>创建</strong>，然后单击 <strong>关闭</strong> 按钮。</li>
+<li>返回 <strong>网络与共享中心</strong>。单击左侧的 <strong>更改适配器设置</strong>。</li>
+<li>右键单击新创建的 VPN 连接，并选择 <strong>属性</strong>。</li>
+<li>单击 <strong>选项</strong> 选项卡，取消选中 <strong>包括Windows登录域</strong> 复选框。</li>
+<li>单击 <strong>安全</strong> 选项卡，从 <strong>VPN 类型</strong> 下拉菜单中选择 “使用 IPsec 的第 2 层隧道协议 (L2TP/IPSec)”。</li>
+<li>单击 <strong>允许使用这些协议</strong>。确保选中 “质询握手身份验证协议 (CHAP)” 复选框。</li>
+<li>单击 <strong>高级设置</strong> 按钮。</li>
+<li>单击 <strong>使用预共享密钥作身份验证</strong> 并在 <strong>密钥</strong> 字段中输入<code>你的 VPN IPsec PSK</code>。</li>
+<li>单击 <strong>确定</strong> 关闭 <strong>高级设置</strong>。</li>
+<li>单击 <strong>确定</strong> 保存 VPN 连接的详细信息。</li>
+</ol>
+<p><strong>注：</strong> <strong>在首次连接之前需要修改一次注册表</strong>（<a href="#windows-错误-809">Windows 错误 809</a>）<strong>，以解决 VPN 服务器 和/或 客户端与 NAT （比如家用路由器）的兼容问题。</strong></p>
+<p>要连接到 VPN： 单击系统托盘中的无线/网络图标，选择新的 VPN 连接，然后单击 <strong>连接</strong>。如果出现提示，在登录窗口中输入 <code>你的 VPN 用户名</code> 和 <code>密码</code> ，并单击 <strong>确定</strong>。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为<code>你的 VPN 服务器 IP</code>。</p>
+<p>如果在连接过程中遇到错误，请参见 <a href="#故障排除">故障排除</a>。</p>
+<h2 id="OS-X"><a href="#OS-X" class="headerlink" title="OS X"></a>OS X</h2><ol>
+<li>打开系统偏好设置并转到网络部分。</li>
+<li>在窗口左下角单击 <strong>+</strong> 按钮。</li>
+<li>从 <strong>接口</strong> 下拉菜单选择 <strong>VPN</strong>。</li>
+<li>从 <strong>VPN类型</strong> 下拉菜单选择 <strong>IPSec 上的 L2TP</strong>。</li>
+<li>在 <strong>服务名称</strong> 字段中输入任意内容。</li>
+<li>单击 <strong>创建</strong>。</li>
+<li>在 <strong>服务器地址</strong> 字段中输入<code>你的 VPN 服务器 IP</code>。</li>
+<li>在 <strong>帐户名称</strong> 字段中输入<code>你的 VPN 用户名</code>。</li>
+<li>单击 <strong>鉴定设置</strong> 按钮。</li>
+<li>在 <strong>用户鉴定</strong> 部分，选择 <strong>密码</strong> 单选按钮，然后输入<code>你的 VPN 密码</code>。</li>
+<li>在 <strong>机器鉴定</strong> 部分，选择 <strong>共享的密钥</strong> 单选按钮，然后输入<code>你的 VPN IPsec PSK</code>。</li>
+<li>单击 <strong>好</strong>。</li>
+<li>选中 <strong>在菜单栏中显示 VPN 状态</strong> 复选框。</li>
+<li>单击 <strong>高级</strong> 按钮，并选中 <strong>通过VPN连接发送所有通信</strong> 复选框。</li>
+<li>单击 <strong>TCP/IP</strong> 选项卡，并在 <strong>配置IPv6</strong> 部分中选择 <strong>仅本地链接</strong>。</li>
+<li>单击 <strong>好</strong> 关闭高级设置，然后单击 <strong>应用</strong> 保存VPN连接信息。</li>
+</ol>
+<p>要连接到 VPN： 使用菜单栏中的图标，或者打开系统偏好设置的网络部分，选择 VPN 并单击 <strong>连接</strong>。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为<code>你的 VPN 服务器 IP</code>。</p>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><ol>
+<li>启动 <strong>设置</strong> 应用程序。</li>
+<li>在 <strong>无线和网络</strong> 部分单击 <strong>更多…</strong>。</li>
+<li>单击 <strong>VPN</strong>。</li>
+<li>单击 <strong>添加VPN配置文件</strong> 或窗口右上角的 <strong>+</strong>。</li>
+<li>在 <strong>名称</strong> 字段中输入任意内容。</li>
+<li>在 <strong>类型</strong> 下拉菜单选择 <strong>L2TP/IPSec PSK</strong>。</li>
+<li>在 <strong>服务器地址</strong> 字段中输入<code>你的 VPN 服务器 IP</code>。</li>
+<li>在 <strong>IPSec 预共享密钥</strong> 字段中输入<code>你的 VPN IPsec PSK</code>。</li>
+<li>单击 <strong>保存</strong>。</li>
+<li>单击新的VPN连接。</li>
+<li>在 <strong>用户名</strong> 字段中输入<code>你的 VPN 用户名</code>。</li>
+<li>在 <strong>密码</strong> 字段中输入<code>你的 VPN 密码</code>。</li>
+<li>选中 <strong>保存帐户信息</strong> 复选框。</li>
+<li>单击 <strong>连接</strong>。</li>
+</ol>
+<p>VPN 连接成功后，会在通知栏显示图标。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为<code>你的 VPN 服务器 IP</code>。</p>
+<p>如果在连接过程中遇到错误，请参见 <a href="#故障排除">故障排除</a>。</p>
+<h2 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h2><ol>
+<li>进入设置 -&gt; 通用 -&gt; VPN。</li>
+<li>单击 <strong>添加VPN配置…</strong>。</li>
+<li>单击 <strong>类型</strong> 。选择 <strong>L2TP</strong> 并返回。</li>
+<li>在 <strong>描述</strong> 字段中输入任意内容。</li>
+<li>在 <strong>服务器</strong> 字段中输入<code>你的 VPN 服务器 IP</code>。</li>
+<li>在 <strong>帐户</strong> 字段中输入<code>你的 VPN 用户名</code>。</li>
+<li>在 <strong>密码</strong> 字段中输入<code>你的 VPN 密码</code>。</li>
+<li>在 <strong>密钥</strong> 字段中输入<code>你的 VPN IPsec PSK</code>。</li>
+<li>启用 <strong>发送所有流量</strong> 选项。</li>
+<li>单击右上角的 <strong>存储</strong>。</li>
+<li>启用 <strong>VPN</strong> 连接。</li>
+</ol>
+<p>VPN 连接成功后，会在通知栏显示图标。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为<code>你的 VPN 服务器 IP</code>。</p>
+<h2 id="Chromebook"><a href="#Chromebook" class="headerlink" title="Chromebook"></a>Chromebook</h2><ol>
+<li>如果你尚未登录 Chromebook，请先登录。</li>
+<li>单击状态区（其中显示你的帐户头像）。</li>
+<li>单击 <strong>设置</strong>。</li>
+<li>在 <strong>互联网连接</strong> 部分，单击 <strong>添加连接</strong>。</li>
+<li>单击 <strong>添加 OpenVPN / L2TP</strong>。</li>
+<li>在 <strong>服务器主机名</strong> 字段中输入<code>你的 VPN 服务器 IP</code>。</li>
+<li>在 <strong>服务名称</strong> 字段中输入任意内容。</li>
+<li>在 <strong>供应商类型</strong> 下拉菜单选择 <strong>L2TP/IPsec + 预共享密钥</strong>。</li>
+<li>在 <strong>预共享密钥</strong> 字段中输入<code>你的 VPN IPsec PSK</code>。</li>
+<li>在 <strong>用户名</strong> 字段中输入<code>你的 VPN 用户名</code>。</li>
+<li>在 <strong>密码</strong> 字段中输入<code>你的 VPN 密码</code>。</li>
+<li>单击 <strong>连接</strong>。</li>
+</ol>
+<p>VPN 连接成功后，网络状态图标上会出现 VPN 指示。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为<code>你的 VPN 服务器 IP</code>。</p>
+<p>如果在连接过程中遇到错误，请参见 <a href="#故障排除">故障排除</a>。</p>
+<h2 id="Windows-Phone"><a href="#Windows-Phone" class="headerlink" title="Windows Phone"></a>Windows Phone</h2><p>Windows Phone 8.1 及以上版本用户可以尝试按照 <a href="http://forums.windowscentral.com/windows-phone-8-1-preview-developers/301521-tutorials-windows-phone-8-1-support-l2tp-ipsec-vpn-now.html" target="_blank">这个教程</a> 的步骤操作。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为<code>你的 VPN 服务器 IP</code>。</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>以下步骤是基于 <a href="https://gist.github.com/psanford/42c550a1a6ad3cb70b13e4aaa94ddb1c" target="_blank" rel="external">Peter Sanford 的工作</a>。这些命令必须在你的 VPN 客户端上使用 <code>root</code> 账户运行。</p>
+<p>要配置 VPN 客户端，首先安装以下软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Ubuntu &amp; Debian</span></div><div class="line">apt-get update</div><div class="line">apt-get -y install strongswan xl2tpd</div><div class="line"></div><div class="line"><span class="comment"># CentOS &amp; RHEL</span></div><div class="line">yum -y install epel-release</div><div class="line">yum -y install strongswan xl2tpd</div><div class="line"></div><div class="line"><span class="comment"># Fedora</span></div><div class="line">yum -y install strongswan xl2tpd</div></pre></td></tr></table></figure>
+<p>创建 VPN 变量 （替换为你自己的值）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">VPN_SERVER_IP=<span class="string">'your_vpn_server_ip'</span></div><div class="line">VPN_IPSEC_PSK=<span class="string">'your_ipsec_pre_shared_key'</span></div><div class="line">VPN_USER=<span class="string">'your_vpn_username'</span></div><div class="line">VPN_PASSWORD=<span class="string">'your_vpn_password'</span></div></pre></td></tr></table></figure>
+<p>配置 strongSwan：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">cat &gt; /etc/ipsec.conf &lt;&lt;EOF</div><div class="line"><span class="comment"># ipsec.conf - strongSwan IPsec configuration file</span></div><div class="line"></div><div class="line"><span class="comment"># basic configuration</span></div><div class="line"></div><div class="line">config setup</div><div class="line">  <span class="comment"># strictcrlpolicy=yes</span></div><div class="line">  <span class="comment"># uniqueids = no</span></div><div class="line"></div><div class="line"><span class="comment"># Add connections here.</span></div><div class="line"></div><div class="line"><span class="comment"># Sample VPN connections</span></div><div class="line"></div><div class="line">conn %default</div><div class="line">  ikelifetime=60m</div><div class="line">  keylife=20m</div><div class="line">  rekeymargin=3m</div><div class="line">  keyingtries=1</div><div class="line">  keyexchange=ikev1</div><div class="line">  authby=secret</div><div class="line">  ike=aes128-sha1-modp1024,3des-sha1-modp1024!</div><div class="line">  esp=aes128-sha1-modp1024,3des-sha1-modp1024!</div><div class="line"></div><div class="line">conn myvpn</div><div class="line">  keyexchange=ikev1</div><div class="line">  left=%defaultroute</div><div class="line">  auto=add</div><div class="line">  authby=secret</div><div class="line">  <span class="built_in">type</span>=transport</div><div class="line">  leftprotoport=17/1701</div><div class="line">  rightprotoport=17/1701</div><div class="line">  right=<span class="variable">$VPN_SERVER_IP</span></div><div class="line">EOF</div><div class="line"></div><div class="line">cat &gt; /etc/ipsec.secrets &lt;&lt;EOF</div><div class="line">: PSK <span class="string">"<span class="variable">$VPN_IPSEC_PSK</span>"</span></div><div class="line">EOF</div><div class="line"></div><div class="line">chmod 600 /etc/ipsec.secrets</div><div class="line"></div><div class="line"><span class="comment"># For CentOS/RHEL &amp; Fedora ONLY</span></div><div class="line">mv /etc/strongswan/ipsec.conf /etc/strongswan/ipsec.conf.old 2&gt;/dev/null</div><div class="line">mv /etc/strongswan/ipsec.secrets /etc/strongswan/ipsec.secrets.old 2&gt;/dev/null</div><div class="line">ln <span class="_">-s</span> /etc/ipsec.conf /etc/strongswan/ipsec.conf</div><div class="line">ln <span class="_">-s</span> /etc/ipsec.secrets /etc/strongswan/ipsec.secrets</div></pre></td></tr></table></figure>
+<p>配置 xl2tpd：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">cat &gt; /etc/xl2tpd/xl2tpd.conf &lt;&lt;EOF</div><div class="line">[lac myvpn]</div><div class="line">lns = <span class="variable">$VPN_SERVER_IP</span></div><div class="line">ppp debug = yes</div><div class="line">pppoptfile = /etc/ppp/options.l2tpd.client</div><div class="line">length bit = yes</div><div class="line">EOF</div><div class="line"></div><div class="line">cat &gt; /etc/ppp/options.l2tpd.client &lt;&lt;EOF</div><div class="line">ipcp-accept-local</div><div class="line">ipcp-accept-remote</div><div class="line">refuse-eap</div><div class="line">require-chap</div><div class="line">noccp</div><div class="line">noauth</div><div class="line">mtu 1280</div><div class="line">mru 1280</div><div class="line">noipdefault</div><div class="line">defaultroute</div><div class="line">usepeerdns</div><div class="line">connect-delay 5000</div><div class="line">name <span class="variable">$VPN_USER</span></div><div class="line">password <span class="variable">$VPN_PASSWORD</span></div><div class="line">EOF</div><div class="line"></div><div class="line">chmod 600 /etc/ppp/options.l2tpd.client</div></pre></td></tr></table></figure>
+<p>至此 VPN 客户端配置已完成。按照下面的步骤进行连接。</p>
+<p><strong>注：</strong> 当你每次尝试连接到 VPN 时，必须重复下面的所有步骤。</p>
+<p>创建 xl2tpd 控制文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p /var/run/xl2tpd</div><div class="line">touch /var/run/xl2tpd/l2tp-control</div></pre></td></tr></table></figure>
+<p>重启服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service strongswan restart</div><div class="line">service xl2tpd restart</div></pre></td></tr></table></figure>
+<p>开始 IPsec 连接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Ubuntu &amp; Debian</span></div><div class="line">ipsec up myvpn</div><div class="line"></div><div class="line"><span class="comment"># CentOS/RHEL &amp; Fedora</span></div><div class="line">strongswan up myvpn</div></pre></td></tr></table></figure>
+<p>开始 L2TP 连接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"c myvpn"</span> &gt; /var/run/xl2tpd/l2tp-control</div></pre></td></tr></table></figure>
+<p>运行 <code>ifconfig</code> 并且检查输出。现在你应该看到一个新的网络接口 <code>ppp0</code>。</p>
+<p>检查你现有的默认路由：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ip route</div></pre></td></tr></table></figure>
+<p>在输出中查找以下行： <code>default via X.X.X.X ...</code>。记下这个网关 IP，并且在下面的两个命令中使用。</p>
+<p>从新的默认路由中排除你的 VPN 服务器 IP （替换为你自己的值）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">route add YOUR_VPN_SERVER_IP gw X.X.X.X</div></pre></td></tr></table></figure>
+<p>如果你的 VPN 客户端是一个远程服务器，则必须从新的默认路由中排除你本地电脑的公有 IP，以避免 SSH 会话被断开 （替换为你自己的公有 IP，可在 <a href="https://www.ipchicken.com" target="_blank">这里</a> 查看）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">route add YOUR_LOCAL_PC_PUBLIC_IP gw X.X.X.X</div></pre></td></tr></table></figure>
+<p>添加一个新的默认路由，并且开始通过 VPN 服务器发送数据：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">route add default dev ppp0</div></pre></td></tr></table></figure>
+<p>至此 VPN 连接已成功完成。检查 VPN 是否正常工作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -qO- http://ipv4.icanhazip.com; <span class="built_in">echo</span></div></pre></td></tr></table></figure>
+<p>以上命令应该返回 <code>你的 VPN 服务器 IP</code>。</p>
+<p>要停止通过 VPN 服务器发送数据：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">route del default dev ppp0</div></pre></td></tr></table></figure>
+<p>要断开连接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Ubuntu &amp; Debian</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"d myvpn"</span> &gt; /var/run/xl2tpd/l2tp-control</div><div class="line">ipsec down myvpn</div><div class="line"></div><div class="line"><span class="comment"># CentOS/RHEL &amp; Fedora</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"d myvpn"</span> &gt; /var/run/xl2tpd/l2tp-control</div><div class="line">strongswan down myvpn</div></pre></td></tr></table></figure>
+<h2 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h2><h3 id="Windows-错误-809"><a href="#Windows-错误-809" class="headerlink" title="Windows 错误 809"></a>Windows 错误 809</h3><blockquote>
+<p>无法建立计算机与 VPN 服务器之间的网络连接，因为远程服务器未响应。</p>
+</blockquote>
+<p>要解决此错误，在首次连接之前需要<a href="https://documentation.meraki.com/MX-Z/Client_VPN/Troubleshooting_Client_VPN#Windows_Error_809" target="_blank">修改一次注册表</a>，以解决 VPN 服务器 和/或 客户端与 NAT （比如家用路由器）的兼容问题。请参照链接网页中的说明，或者打开<a href="http://www.cnblogs.com/xxcanghai/p/4610054.html" target="_blank">提升权限命令提示符</a>并运行以下命令。完成后必须重启计算机。</p>
+<ul>
+<li><p>适用于 Windows Vista, 7, 8 和 10</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /v AssumeUDPEncapsulationContextOnSendRule /t REG_DWORD /d 0x2 /f</div></pre></td></tr></table></figure>
+</li>
+<li><p>仅适用于 Windows XP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Services\IPSec /v AssumeUDPEncapsulationContextOnSendRule /t REG_DWORD /d 0x2 /f</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Windows-错误-628"><a href="#Windows-错误-628" class="headerlink" title="Windows 错误 628"></a>Windows 错误 628</h3><blockquote>
+<p>在连接完成前，连接被远程计算机终止。</p>
+</blockquote>
+<p>要解决此错误，请按以下步骤操作：</p>
+<ol>
+<li>右键单击系统托盘中的无线/网络图标，选择 <strong>打开网络与共享中心</strong>。</li>
+<li>单击左侧的 <strong>更改适配器设置</strong>。右键单击新的 VPN 连接，并选择 <strong>属性</strong>。</li>
+<li>单击 <strong>安全</strong> 选项卡，从 <strong>VPN 类型</strong> 下拉菜单中选择 “使用 IPsec 的第 2 层隧道协议 (L2TP/IPSec)”。</li>
+<li>单击 <strong>允许使用这些协议</strong>。确保选中 “质询握手身份验证协议 (CHAP)” 复选框。</li>
+<li>单击 <strong>高级设置</strong> 按钮。</li>
+<li>单击 <strong>使用预共享密钥作身份验证</strong> 并在 <strong>密钥</strong> 字段中输入<code>你的 VPN IPsec PSK</code>。</li>
+<li>单击 <strong>确定</strong> 关闭 <strong>高级设置</strong>。</li>
+<li>单击 <strong>确定</strong> 保存 VPN 连接的详细信息。</li>
+</ol>
+<p><img src="https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/docs/images/vpn-properties-zh.png" alt="Select CHAP in VPN connection properties"></p>
+<h3 id="Android-6-and-7"><a href="#Android-6-and-7" class="headerlink" title="Android 6 and 7"></a>Android 6 and 7</h3><p>如果你无法使用 Android 6 (Marshmallow) 或者 7 (Nougat) 连接：</p>
+<ol>
+<li>单击 VPN 连接旁边的设置按钮，选择 “Show advanced options” 并且滚动到底部。如果选项 “Backward compatible mode” 存在，请启用它并重试连接。如果不存在，请尝试下一步。</li>
+<li><strong>注：</strong> 最新版本的 VPN 脚本已经包含这个更改。<br>（适用于 Android 7.1.2 及以上版本） 编辑 VPN 服务器上的 <code>/etc/ipsec.conf</code>。在 <code>ike=</code> 和 <code>phase2alg=</code> 两行的末尾添加 <code>,aes256-sha2_512</code> 字样。保存修改并运行 <code>service ipsec restart</code>。(<a href="https://github.com/hwdsl2/setup-ipsec-vpn/commit/f58afbc84ba421216ca2615d3e3654902e9a1852" target="_blank">参见</a>)</li>
+<li>编辑 VPN 服务器上的 <code>/etc/ipsec.conf</code>。找到 <code>sha2-truncbug=yes</code> 并将它替换为 <code>sha2-truncbug=no</code>，开头必须空两格。保存修改并运行 <code>service ipsec restart</code>。(<a href="https://libreswan.org/wiki/FAQ#Configuration_Matters" target="_blank">参见</a>)</li>
+</ol>
+<p><img src="images/vpn-profile-Android.png" alt="Android VPN workaround"></p>
+<h3 id="Chromebook-1"><a href="#Chromebook-1" class="headerlink" title="Chromebook"></a>Chromebook</h3><p>Chromebook 用户： 如果你无法连接，请尝试 <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=707139#c58" target="_blank">这个解决方案</a>。或者你也可以尝试编辑 VPN 服务器上的 <code>/etc/ipsec.conf</code>，找到 <code>sha2-truncbug=yes</code> 并将它替换为 <code>sha2-truncbug=no</code>。保存修改并运行 <code>service ipsec restart</code>。</p>
+<h3 id="其它错误"><a href="#其它错误" class="headerlink" title="其它错误"></a>其它错误</h3><p>如果你遇到其它错误，请参见以下链接：</p>
+<ul>
+<li><a href="https://documentation.meraki.com/MX-Z/Client_VPN/Troubleshooting_Client_VPN#Common_Connection_Issues" target="_blank" rel="external">https://documentation.meraki.com/MX-Z/Client_VPN/Troubleshooting_Client_VPN#Common_Connection_Issues</a>   </li>
+<li><a href="https://blogs.technet.microsoft.com/rrasblog/2009/08/12/troubleshooting-common-vpn-related-errors/" target="_blank" rel="external">https://blogs.technet.microsoft.com/rrasblog/2009/08/12/troubleshooting-common-vpn-related-errors/</a>   </li>
+<li><a href="http://www.tp-link.com/en/faq-1029.html" target="_blank" rel="external">http://www.tp-link.com/en/faq-1029.html</a></li>
+</ul>
+<p>原文：<a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md" target="_blank" rel="external">https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/06/10/anyconnect_installation/" data-toggle="tooltip" data-placement="top" title="配置 Cisco AnyConnect VPN 客户端">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/05/26/Comment_about_shuping_speech/" data-toggle="tooltip" data-placement="top" title="马里兰大学杨舒平毕业典礼演讲到底是怎么回事">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                
+                    <!-- livere 评论框 start -->
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODgzOC81NDA4">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') { return; }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- livere 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#VPN" title="VPN">VPN</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.pitt.edu" target="_blank">University of Pittsburgh</a></li>
+                    
+                        <li><a href="#" target="_blank">More</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/gjj930923">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 北美嘉哥 2018 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://gjj930923.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-89426115-1';
+    var _gaDomain = 'undefined';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
