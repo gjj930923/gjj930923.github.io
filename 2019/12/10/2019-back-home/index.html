@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -153,10 +156,48 @@
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
 <style type="text/css">
     header.intro-header{
         background-image: url('/img/home-bg.jpg')
     }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -186,13 +227,14 @@
 <article>
     <div class="container">
         <div class="row">
+            
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-12
+                col-md-12
                 post-container">
-
+                
                 <p>终于迎来了难得的一次回国机会。回想过去这三年多，确切说是1224天，除了中间一周末三天时间去了加拿大暂时离开了美国，其他时间都在美国境内，从F1签证开始到后来的CPT实习，OPT上班并且在2019年抽中了H1B工作签证。这里面经历了许多，不仅仅是一个硕士学位和一份工作，让自己从学生变成了社会人。</p>
 <p>在这个过程中，我经历了许多“第一次”：</p>
 <ul>
@@ -221,6 +263,14 @@
 <p>当我和教会的朋友说过我要回国看看的时候，一个姐妹向我祷告，说我是带着“光”回国的，为的是带着福音回去，影响并改变国内的家人和朋友，教会的师母也叮嘱我买点保健品给爸妈。感谢教会朋友们的关心。年初的时候我和一个高中同学聊天，他说他好久没见我了。我当时就想到了圣经罗马书里的关于“老我”和“新我”（属肉体的人和属灵的人）的典故，就半开玩笑说，你想念的只是“老我”，但你将来见到的就是“新我”了，尽管和圣经原文并不完全是一个意思。不过“新我”到底又新在哪呢？我想无外乎就这几点：国际视野、工作能力、外语、修车……再加一点比较俗气的那就是自己比以前更舍得花钱了，挣美金的人就是和挣人民币的人不一样，所有人民币价格除以7之后就都很便宜了。</p>
 <p>将来如果身份上允许的话我还是打算长久在美国工作，一方面是因为国内的996的工作环境，再一个就是生活上亲近大自然，对子女的教育也比较多元化。我知道有的人会觉得美国只有好山好水好无聊，环境不熟悉，而且美国公立中小学学风也不太好，似乎在美国只值得读几年书和短时间工作赚比国内数字上高得多的钱。我觉得随着中国的实力增长和中国人进一步的走向世界，美国的华人群体需要更加壮大并逐渐具有话语权，再一个就是华人普遍重视教育，宁可花大价钱读优质私立也不会去中等或下等的公立学校，我对这点还是比较有信心的。国内的教育竞争仍然很激烈，按分数说话仍然是升学的重要也是广泛认可的指标，目前深圳的中考只有不到半数人能上高中，即便自己是应试教育的成功者也未必能够教育好自己的下一代。所以留在美国应该就是上帝对我独特的安排吧，希望能让我在美利坚发光发热。当然也期盼自己将来的另一半也愿意在美国生活。至于回国嘛，现阶段也就是短时间看看家人和朋友，顺便吃吃玩玩就行。</p>
 
+
+                
+                    
+                
+                    
+                
+
+                
 
                 <hr>
 
@@ -270,8 +320,8 @@
     <!-- Sidebar Container -->
 
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-10 col-lg-offset-1
+                col-md-12
                 sidebar-container">
 
                 <!-- Featured Tags -->
@@ -307,6 +357,29 @@
         </div>
     </div>
 </article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 
 

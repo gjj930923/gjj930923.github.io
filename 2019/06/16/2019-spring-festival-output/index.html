@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -153,10 +156,48 @@
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
 <style type="text/css">
     header.intro-header{
         background-image: url('/img/home-bg.jpg')
     }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -188,13 +229,14 @@
 <article>
     <div class="container">
         <div class="row">
+            
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-12
+                col-md-12
                 post-container">
-
+                
                 <h2 id="来美之前"><a href="#来美之前" class="headerlink" title="来美之前"></a>来美之前</h2><p>我从2016年夏季开始，离开了自己的祖国，来到美国的匹兹堡，开始了自己新的人生旅程和求学之路。首先是完成了两年的硕士学习，期间在加州还在一家公司进行了三个月的实习。之后便到了匹兹堡市郊一家公司工作至今。<br>因为父亲单位不方便请假，所以父母并没有在毕业的时候过来参加我的毕业典礼，不过好在春节期间有一周的假期，所以去年9月份的时候，我就帮爸妈和我弟安排了面签和寄送材料，都顺利得拿到了旅游B类签证，然后在11月订好了国航从广州到纽约JFK中转北京的机票，从2月1号到9号总共9天。为了这次旅程，我向公司请了带薪年假，总共请了6个工作日的假。</p>
 <h2 id="第1天"><a href="#第1天" class="headerlink" title="第1天"></a>第1天</h2><p>两年多都没见自己家里人了，虽然我大概两周都会和父母进行视频通话，不过百闻不如一见，能够面对面见面当然是见好事。飞机下午2点多到达纽约机场，然而一早匹兹堡的路况却非常糟糕，以至于当天正常上班的同事还被临时允许在家上班。早上7点钟就出发的我，匆忙drive thru解决麦当劳早餐然后就上路了。估计是扫雪车还没上路，我开到这段路的时候甚至因为动力的原因加上没有换雪胎导致自己的车被困在其中，汽车马力开得很大的时候才顺利开了上去。</p>
 <p><img src="IMG_20190201_075803.jpg?0.13796095049728652" alt>  </p>
@@ -275,6 +317,16 @@
 <p>旅程结束了，我在纽约暂住一晚，第二天和在纽约的朋友吃饭然后开车回匹兹堡，继续我的工作。</p>
 
 
+                
+                    
+                
+                    
+                
+                    
+                
+
+                
+
                 <hr>
 
                 
@@ -323,8 +375,8 @@
     <!-- Sidebar Container -->
 
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-10 col-lg-offset-1
+                col-md-12
                 sidebar-container">
 
                 <!-- Featured Tags -->
@@ -362,6 +414,29 @@
         </div>
     </div>
 </article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 
 

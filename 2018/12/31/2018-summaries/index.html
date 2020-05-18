@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -153,10 +156,48 @@
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
 <style type="text/css">
     header.intro-header{
         background-image: url('/img/home-bg.jpg')
     }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -186,13 +227,14 @@
 <article>
     <div class="container">
         <div class="row">
+            
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-12
+                col-md-12
                 post-container">
-
+                
                 <p>好久没更新博客了。最近成功将自己的博客添加了https，也优化了评论功能和一点点布局。在我码字的时候，中国早已进入了2019年，美国也很快就要告别2018了。回顾2018，这对我来说是个意义非凡的一年，因为我终于结束了自己18年的学生生涯，正式成为一名上班族，同时也让我略感意外的是，2018年我一直常住匹兹堡，从象牙塔气氛浓厚的Oakland区到匹兹堡机场北边远离市区却又些许热闹的Moon Township，2019年我想也应该会一直在匹兹堡了。</p>
 <p>然而与此同时，看到自己在匹大两年的同学一个一个离开匹兹堡甚至离开美国，我总觉得自己在匹兹堡会越来越无聊和孤独，还好感谢上帝让我能在匹兹堡华人教会里橄榄树小组里和组里的伙伴们一起“high”，当然还有新的群体，那就是公司IT部门里的同事尤其是华人同事们。这一年似乎又是一个枯燥无味的一年，这一年没有了2017年选修CMU云计算在线课程（15619）时挑灯夜战和小组合作的跌宕起伏，加州硅谷三个月实习的另类体验，以及长达一周的西部大峡谷惊险旅程，有的只是最后一学期的算法水课，毕业后7个多月的965上班节奏，以及仅有的几天加拿大多伦多自驾游。</p>
 <p>重新翻了一下自己的谷歌相册，算是大体回顾了这一年的吃喝玩乐和喜怒哀乐吧。</p>
@@ -281,6 +323,14 @@
 <p>2017年底大峡谷旅游拍的照片<br><img src="https://junjia.me/2018/12/31/2018-summaries/IMG_1151.jpg" alt></p>
 
 
+                
+                    
+                
+                    
+                
+
+                
+
                 <hr>
 
                 
@@ -329,8 +379,8 @@
     <!-- Sidebar Container -->
 
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-10 col-lg-offset-1
+                col-md-12
                 sidebar-container">
 
                 <!-- Featured Tags -->
@@ -366,6 +416,29 @@
         </div>
     </div>
 </article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 
 

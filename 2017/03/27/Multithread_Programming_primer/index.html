@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -153,10 +156,48 @@
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
 <style type="text/css">
     header.intro-header{
         background-image: url('/img/home-bg.jpg')
     }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -186,13 +227,14 @@
 <article>
     <div class="container">
         <div class="row">
+            
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-12
+                col-md-12
                 post-container">
-
+                
                 <h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>每个java对象都有一把锁， 当有多个线程同时访问共享资源的时候， 需要synchronized 来控制安全性， synchronized 分 synchronized 方法 和synchronized块，使用synchronized块时， 一定要显示的获得该对象的锁（如synchronized（object))而方法则不需要。<br>java的内存模型是对每一个进程有一个主内存， 每个线程有自己的内存， 他们从主内存中取数据， 然后计算， 再存入主内存中。<br>并发问题如下：如果多个线程同事操作同一数据， A线程从主内存中取的I的值为1， 然后进行加1操作， 这时B线程也取I的值， 进行加2操作， 然后A存入2到主内存中， B也存入， 这样就覆盖了A的值（同数据库中的并发问题一样）。</p>
 <h3 id="使用机制"><a href="#使用机制" class="headerlink" title="使用机制"></a>使用机制</h3><h4 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 代码块形式</span><br><span class="line"><span class="keyword">private</span> Object obj = <span class="keyword">new</span> Object();<span class="comment">//自定义同步锁</span></span><br><span class="line"><span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">		<span class="keyword">while</span>(!condition) &#123;</span><br><span class="line">			obj.wait();</span><br><span class="line">	&#125;</span><br><span class="line">	obj.doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 函数形式</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!condition)&#123;</span><br><span class="line">		wait();</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当线程A获得了obj锁后，发现条件condition不满足，无法继续下一处理，于是线程A就wait() , 放弃对象锁。<br>之后在另一线程B中，如果B更改了某些条件，使得线程A的condition条件满足了，就可以唤醒线程A：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">	condition = <span class="keyword">true</span>;</span><br><span class="line">	obj.notify();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -207,6 +249,14 @@
 </ol>
 <p>###<br>出处：<br><a href="http://www.cnblogs.com/adamzuocy/archive/2010/03/08/1680851.html" target="_blank" rel="noopener">http://www.cnblogs.com/adamzuocy/archive/2010/03/08/1680851.html</a><br><a href="http://blog.csdn.net/weizhaozhe/article/details/3922647" target="_blank" rel="noopener">http://blog.csdn.net/weizhaozhe/article/details/3922647</a></p>
 
+
+                
+                    
+                
+                    
+                
+
+                
 
                 <hr>
 
@@ -256,8 +306,8 @@
     <!-- Sidebar Container -->
 
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-10 col-lg-offset-1
+                col-md-12
                 sidebar-container">
 
                 <!-- Featured Tags -->
@@ -293,6 +343,29 @@
         </div>
     </div>
 </article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 
 

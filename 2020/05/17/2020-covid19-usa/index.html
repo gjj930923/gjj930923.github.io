@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          美帝匹兹堡新冠抗疫记【持续更新中】 - Junjia&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://gjj930923.github.io/2020/05/17/2020-covid19-usa/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">北美嘉哥</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archives/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About Me</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#相册/Album" title="相册/Album">相册/Album</a>
+                        
+                    </div>
+                    <h1>美帝匹兹堡新冠抗疫记【持续更新中】</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Junjia Guo on
+                        2020-05-17
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-12
+                col-md-12
+                post-container">
+                
+                <p>去年年底我利用公司年假回了一趟国，今年1月初回到了美国，没几天之后中国国内就从武汉爆发了新冠疫情。那个时候海内外的同胞们每天都在关心国内数字的增长和国内的舆论，有些国家的华人也在积极准备捐献活动，集资购买口罩、防护服等装备。到了2月份下旬，国内疫情渐渐的好转起来，然而中国之外的疫情才刚刚开始，从伊朗、意大利到整个欧洲，再到北美，再到中南美洲和非洲，几乎所有大小国家都卷入了此次疫情当中。对于美国人来说，已经很久没经历过这场史诗级的灾难了，上次经历的同等强度的大流行病还是1918年的时候，所以对于我来说也算是和美国人民同呼吸共命运了几个月，见证了一段重要的历史。</p>
+<p>虽然抗疫期间我基本上都只在我家，只有周末买菜才出门，然而我还是随时记录了一些有意义且难得的画面。这样的画面我想之后的人生不会再见到了。</p>
+
+
+                
+                    
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517175959.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517175959.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    2月21日，匹兹堡大学援助武汉口罩捐献处。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180441.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180441.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    3月11日，某超市货架的告示，表示相关的消毒用品已经暂时售罄
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180631.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180631.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    超市的纸巾已经开始缺货了。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180714.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180714.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    3月14日上午9点半，超市直接贴告示称部分商品已经售完，包括水、纸巾、新鲜鸡肉、消毒纸巾等。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180901.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517180901.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    部分商品即使在售也限购了。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181111.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181111.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    停车场离开超市的汽车队列。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181324.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181324.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    另外一家超市，意大利面酱料基本上被一扫而空。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181406.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181406.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    意面也基本抢光，只有一款还很充足。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181656.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181656.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    鸡肉也没有了，不过其他商品多数都还正常。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181743.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181743.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    工作人员正在消毒购物车。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181818.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517181818.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    我们公司在准备全体在家工作。洗手间贴出了美国疾控中心CDC的洗手指南。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517223044.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517223044.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    准备到某文具店取货，入口标示最多10人入内。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517223334.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517223334.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    某华人超市门口，老板谢绝顾客入内，买东西需要提前微信下单。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517224235.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517224235.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    4月8日，大型超市门口画了黄线，设定了指定出入口并且有人把守。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517224356.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517224356.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    4月11日，超市门口，人们保持2米的社交距离，并且店内限制访问人数。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517224846.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517224846.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    社交距离和60岁以上老年人专用时间（早上8-9点）告示牌。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225004.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225004.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    疫情伴随着国际油价的大跌。疫情前的价格大概是每加仑2.7-2.9美金。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517230156.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517230156.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    高速公路电子显示屏，提醒民众执行社交距离的规定。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225235.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225235.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    餐馆门口写着：（仅供）外送和外带。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225759.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225759.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    肯德基门口的告示。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225830.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225830.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    到了5月份，商店纷纷规定不带口罩不得入内。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225917.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517225917.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    某中餐厅贴告示规定最多两人入内。
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide swiper-lazy" style="background-image: url(https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517230054.jpg);">
+                                <!--<img data-src="https://raw.githubusercontent.com/gjj930923/photorepo/master/github_blog/images/20200517230054.jpg" class="swiper-lazy">-->
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                
+                                <div class="text">
+                                    外卖APP用餐高峰期让人猝不及防的告示。
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                            <div class="swiper-pagination swiper-pagination-white"></div>
+                            <div class="swiper-button-next swiper-button-white"></div>
+                            <div class="swiper-button-prev swiper-button-white"></div>
+                        </div>
+                    
+                
+
+                
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2020/04/16/2019-lounges-review/" data-toggle="tooltip" data-placement="top" title="机场贵宾休息室点评（匹兹堡the club、多伦多premium plaza、北京首都BGS、纽约JFK机场Wingtips）">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                
+                    <!-- livere 评论框 start -->
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTkyMC8xODQ2Ng==">
+                        <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') { return; }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                        </script>
+                    <noscript> 为正常使用评论功能请激活JavaScript</noscript>
+                    </div>
+                    <!-- livere 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-10 col-lg-offset-1
+                col-md-12
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#相册/Album" title="相册/Album">相册/Album</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.pitt.edu" target="_blank">University of Pittsburgh</a></li>
+                    
+                        <li><a href="#" target="_blank">More</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/guo-jun-jia-38">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/gjj930923">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/junjiaguo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 北美嘉哥 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://gjj930923.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-89426115-1';
+    var _gaDomain = 'undefined';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://gjj930923.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

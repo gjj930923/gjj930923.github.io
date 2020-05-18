@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -170,17 +173,19 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                    <a href="#随感" title="随感" rel="3">随感</a>
+                    <a href="#信用卡" title="信用卡" rel="1">信用卡</a>
                 
-                    <a href="#总结" title="总结" rel="1">总结</a>
+                    <a href="#机场贵宾室" title="机场贵宾室" rel="1">机场贵宾室</a>
+                
+                    <a href="#随感" title="随感" rel="3">随感</a>
                 
                     <a href="#回国" title="回国" rel="1">回国</a>
                 
                     <a href="#Android" title="Android" rel="2">Android</a>
                 
-                    <a href="#信用卡" title="信用卡" rel="1">信用卡</a>
+                    <a href="#相册/Album" title="相册/Album" rel="1">相册/Album</a>
                 
-                    <a href="#机场贵宾室" title="机场贵宾室" rel="1">机场贵宾室</a>
+                    <a href="#中美思考" title="中美思考" rel="1">中美思考</a>
                 
                     <a href="#AWS" title="AWS" rel="1">AWS</a>
                 
@@ -190,19 +195,19 @@
                 
                     <a href="#MySQL" title="MySQL" rel="1">MySQL</a>
                 
-                    <a href="#美国" title="美国" rel="1">美国</a>
-                
-                    <a href="#父母" title="父母" rel="1">父母</a>
-                
-                    <a href="#VPN" title="VPN" rel="3">VPN</a>
-                
-                    <a href="#中美思考" title="中美思考" rel="1">中美思考</a>
-                
-                    <a href="#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
-                
                     <a href="#Java" title="Java" rel="1">Java</a>
                 
                     <a href="#多线程" title="多线程" rel="1">多线程</a>
+                
+                    <a href="#VPN" title="VPN" rel="3">VPN</a>
+                
+                    <a href="#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
+                
+                    <a href="#总结" title="总结" rel="1">总结</a>
+                
+                    <a href="#美国" title="美国" rel="1">美国</a>
+                
+                    <a href="#父母" title="父母" rel="1">父母</a>
                 
             </div>
 
@@ -210,8 +215,8 @@
 
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="随感">
-                    <span class="tag-text">随感</span>
+                <span class="fa fa-tag listing-seperator" id="信用卡">
+                    <span class="tag-text">信用卡</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -219,15 +224,44 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2018/12/31/2018-summaries/">
+                     <a href="/2020/04/16/2019-lounges-review/">
                         <h2 class="post-title">
-                            那些有或没有记录在朋友圈里的2018
+                            机场贵宾休息室点评（匹兹堡the club、多伦多premium plaza、北京首都BGS、纽约JFK机场Wingtips）
                         </h2>
                         
                     </a>
                     <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="机场贵宾室">
+                    <span class="tag-text">机场贵宾室</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2020/04/16/2019-lounges-review/">
+                        <h2 class="post-title">
+                            机场贵宾休息室点评（匹兹堡the club、多伦多premium plaza、北京首都BGS、纽约JFK机场Wingtips）
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="随感">
+                    <span class="tag-text">随感</span>
+                </span>
                 
                   <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -249,9 +283,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2019/06/16/2019-spring-festival-output/">
+                     <a href="/2018/12/31/2018-summaries/">
                         <h2 class="post-title">
-                            父母第一次来美国，是什么样的体验
+                            那些有或没有记录在朋友圈里的2018
                         </h2>
                         
                     </a>
@@ -259,21 +293,14 @@
                 </div>
                 <hr>
                 
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="总结">
-                    <span class="tag-text">总结</span>
-                </span>
-                
                   <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2018/12/31/2018-summaries/">
+                     <a href="/2019/06/16/2019-spring-festival-output/">
                         <h2 class="post-title">
-                            那些有或没有记录在朋友圈里的2018
+                            父母第一次来美国，是什么样的体验
                         </h2>
                         
                     </a>
@@ -343,8 +370,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="信用卡">
-                    <span class="tag-text">信用卡</span>
+                <span class="fa fa-tag listing-seperator" id="相册/Album">
+                    <span class="tag-text">相册/Album</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -352,9 +379,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2020/04/16/2019-lounges-review/">
+                     <a href="/2020/05/17/2020-covid19-usa/">
                         <h2 class="post-title">
-                            机场贵宾休息室点评（匹兹堡the club、多伦多premium plaza、北京首都BGS、纽约JFK机场Wingtips）
+                            美帝匹兹堡新冠抗疫记【持续更新中】
                         </h2>
                         
                     </a>
@@ -365,8 +392,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="机场贵宾室">
-                    <span class="tag-text">机场贵宾室</span>
+                <span class="fa fa-tag listing-seperator" id="中美思考">
+                    <span class="tag-text">中美思考</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -374,9 +401,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2020/04/16/2019-lounges-review/">
+                     <a href="/2017/05/26/Comment_about_shuping_speech/">
                         <h2 class="post-title">
-                            机场贵宾休息室点评（匹兹堡the club、多伦多premium plaza、北京首都BGS、纽约JFK机场Wingtips）
+                            马里兰大学杨舒平毕业典礼演讲到底是怎么回事
                         </h2>
                         
                     </a>
@@ -475,146 +502,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="美国">
-                    <span class="tag-text">美国</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/06/16/2019-spring-festival-output/">
-                        <h2 class="post-title">
-                            父母第一次来美国，是什么样的体验
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="父母">
-                    <span class="tag-text">父母</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/06/16/2019-spring-festival-output/">
-                        <h2 class="post-title">
-                            父母第一次来美国，是什么样的体验
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="VPN">
-                    <span class="tag-text">VPN</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/06/10/anyconnect_installation/">
-                        <h2 class="post-title">
-                            配置 Cisco AnyConnect VPN 客户端
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/07/08/shadowsocks_installation/">
-                        <h2 class="post-title">
-                            【转】配置 Shadow Socks 客户端
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/06/04/ipsec_l2tp_vpn_client/">
-                        <h2 class="post-title">
-                            【转】配置 IPsec/L2TP VPN 客户端
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="中美思考">
-                    <span class="tag-text">中美思考</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/05/26/Comment_about_shuping_speech/">
-                        <h2 class="post-title">
-                            马里兰大学杨舒平毕业典礼演讲到底是怎么回事
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Ubuntu">
-                    <span class="tag-text">Ubuntu</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
-                        <h2 class="post-title">
-                            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Java">
                     <span class="tag-text">Java</span>
                 </span>
@@ -649,6 +536,146 @@
                      <a href="/2017/03/27/Multithread_Programming_primer/">
                         <h2 class="post-title">
                             【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="VPN">
+                    <span class="tag-text">VPN</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/06/10/anyconnect_installation/">
+                        <h2 class="post-title">
+                            配置 Cisco AnyConnect VPN 客户端
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/06/04/ipsec_l2tp_vpn_client/">
+                        <h2 class="post-title">
+                            【转】配置 IPsec/L2TP VPN 客户端
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/07/08/shadowsocks_installation/">
+                        <h2 class="post-title">
+                            【转】配置 Shadow Socks 客户端
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Ubuntu">
+                    <span class="tag-text">Ubuntu</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
+                        <h2 class="post-title">
+                            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="总结">
+                    <span class="tag-text">总结</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2018/12/31/2018-summaries/">
+                        <h2 class="post-title">
+                            那些有或没有记录在朋友圈里的2018
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="美国">
+                    <span class="tag-text">美国</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2019/06/16/2019-spring-festival-output/">
+                        <h2 class="post-title">
+                            父母第一次来美国，是什么样的体验
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="父母">
+                    <span class="tag-text">父母</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2019/06/16/2019-spring-festival-output/">
+                        <h2 class="post-title">
+                            父母第一次来美国，是什么样的体验
                         </h2>
                         
                     </a>

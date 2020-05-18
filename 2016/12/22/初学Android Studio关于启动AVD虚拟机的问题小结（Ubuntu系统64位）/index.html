@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -153,10 +156,48 @@
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
 <style type="text/css">
     header.intro-header{
         background-image: url('/img/home-bg.jpg')
     }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -186,13 +227,14 @@
 <article>
     <div class="container">
         <div class="row">
+            
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-12
+                col-md-12
                 post-container">
-
+                
                 <h2 id="提示找不到AVD"><a href="#提示找不到AVD" class="headerlink" title="提示找不到AVD"></a><a href="http://stackoverflow.com/questions/27537578/could-not-find-ini-file-in-android-avd-home-nor-in-home-android-avd" target="_blank" rel="noopener">提示找不到AVD</a></h2><pre><code>Could not find INI file in $ANDROID_AVD_HOME nor in $HOME/.android/avd
 </code></pre><p>解决方案：<code>~/.android/.avd</code> 下有可能是空的，实际上AVD的具体配置文件是在<code>/root/.android/.avd</code>中，文件名诸如<code>Nexus_7_API_23.ini</code>。因此需要将<code>~/.android</code>下的<code>.avd</code>文件夹删除，再设置软链连接到<code>/root/.android/.avd</code>。</p>
 <p>Terminal 操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rm ~/.android/.avd</span><br><span class="line">$ sudo ln -s /root/.android/.avd ~/.android/.avd</span><br></pre></td></tr></table></figure></p>
@@ -201,6 +243,14 @@
 <h2 id="Could-not-create-GLES-2-x-Pbuffer-3"><a href="#Could-not-create-GLES-2-x-Pbuffer-3" class="headerlink" title="[Could not create GLES 2.x Pbuffer!][3]"></a>[Could not create GLES 2.x Pbuffer!][3]</h2><p>错误提示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">failed to create drawable</span><br><span class="line">getGLES2ExtensionString: Could not create GLES 2.x Pbuffer!</span><br><span class="line">Failed to obtain GLES 2.x extensions string!</span><br><span class="line">Could not initialize emulated framebuffer</span><br><span class="line">emulator: Listening for console connections on port: 5554</span><br><span class="line">emulator: Serial number of this emulator (for ADB): emulator-5554</span><br><span class="line">emulator: ERROR: Could not initialize OpenglES emulation, use &apos;-gpu off&apos; to disable it.</span><br></pre></td></tr></table></figure></p>
 <p>解决方案：<br>在Android Studio中进入AVD Manager，编辑相应的AVD设备，在Emulated Performance中选择<code>Software GLES2.0</code>。保存并重启即可。<br>[3]: <a href="http://stackoverflow.com/questions/30686324/error-while-running-android-application-could-not-initialize-opengles-emulatio" target="_blank" rel="noopener">http://stackoverflow.com/questions/30686324/error-while-running-android-application-could-not-initialize-opengles-emulatio</a></p>
 
+
+                
+                    
+                
+                    
+                
+
+                
 
                 <hr>
 
@@ -246,8 +296,8 @@
     <!-- Sidebar Container -->
 
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-10 col-lg-offset-1
+                col-md-12
                 sidebar-container">
 
                 <!-- Featured Tags -->
@@ -283,6 +333,29 @@
         </div>
     </div>
 </article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 
 

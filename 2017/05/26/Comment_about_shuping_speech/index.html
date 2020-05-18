@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="keyword" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -27,6 +28,8 @@
 
     <!-- Pygments Highlight CSS -->
     <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -90,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -153,10 +156,48 @@
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
 <style type="text/css">
     header.intro-header{
         background-image: url('/img/home-bg.jpg')
     }
+.swiper-container {
+  width: 100%;
+  /*height: 73vw;*/
+}
+.swiper-slide {
+  font-size: 18px;
+  background: rgba(0, 0, 0, .1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-slide .text {
+  text-align: justify;
+  max-width: 100%;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}*/
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -184,13 +225,14 @@
 <article>
     <div class="container">
         <div class="row">
+            
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-12
+                col-md-12
                 post-container">
-
+                
                 <p>毕业了，马里兰大学的杨舒平菜馆给毕业生们送上了一份毕业大餐，就餐的有美国毕业生还有一些中国毕业生。首先是前菜，杨大厨准备了两道菜：美国空气和中国空气。美国空气很甜很美味，还有着淡淡的奢华感，大家都很喜欢。可当中国人吃起中国空气这道菜时，大家却觉得很不新鲜，很不是滋味，也坏了他们的胃口。然后主菜做好了，大厨送上了生命、自由和对幸福渴望，以及洛杉矶暮光豪华套餐。美国人觉得这些菜几乎天天吃，没什么意思，但却吃得津津有味。这时一个叫北美留学生日报的中国人站出来了，告诉其他中国人：既然连前菜都做不好，主菜肯定也不行，就叫大家不要吃了。这些菜的口味本身就不适合大多数中国胃口，结果听了这话后信以为真，还向外宣传说杨家菜用不新鲜食材坑害消费者，最终迫使杨道歉。</p>
 <p>平心而论，杨的毕业演讲的确很一般。对于美国人而言，美国经历了两百多年的建设，自由民主言论自由天赋人权的价值观早就已经被视为空气一样是理所当然的了，因此并没有什么新鲜的亮点，就连今年特朗普上任的演讲也打破以往惯例，不再重提美国价值观（<a href="https://www.whitehouse.gov/inaugural-address" target="_blank" rel="noopener">The Inaugural Address</a>），而是以一个生意人务实的性格阐述美国蓝图。当然还有对中国空气质量的吐槽，这个许多人也提到过了。虽然中国雾霾严重是事实，但是雾霾主要也就集中在华北东北主要工业区，还有外国人相对集中的行政中心北京。而杨的演讲把自己家所在的昆明硬说成是雾霾严重的城市。加强了美国人对中国刻板印象还只是其次，更重要的是这个例子还被某些人解读为丑化中国没有民主自由，尽管演讲的主题是美国的价值观，以及对母校马里兰大学的赞美，空气只是个引子。</p>
 <p>然而，在这起毕业演讲的风波里，我认为媒体煽风点火，添油加醋的报导也要负主要责任。我也是一名身在美国的中国留学生，我朋友圈里转发的都是《 @北美留学生日报 》上关于该演讲的介绍，标题是：马里兰大学中国留学生毕业演讲涉嫌辱华：我在美国吸到的空气都是甜的。（出处：<a href="https://mp.weixin.qq.com/s/y8VZPCHgErXftxZDY96TAg" target="_blank" rel="noopener">马里兰大学中国留学生毕业演讲涉嫌辱华：我在美国吸到的空气都是甜的</a>）<br>一个“涉嫌辱华”的标签直接打在了杨同学身上。<br>《 @北美留学生日报 》认为，她的演讲全程围绕以下两个要点：</p>
@@ -225,6 +267,12 @@
 <p>作为包括我在内的年轻人，对长辈们转发的有关养生、食品安全等的文章嗤之以鼻，却从不怀疑一些同样有炒作嫌疑的公众号文章。我朋友圈里有已经毕业的美本，也有国内顶尖名校毕业来美读研的，也有演讲者所在的昆明的老乡，他们都转发了这篇有明显主观倾向的文章，并且加入了一些不堪入目的话。我理解留学生们的爱国情怀，但是这种不加思考就直接转发的行为，让我感到非常惊讶。信息时代人们短时间内获取大量信息，但也给了某些公众号一些断章取义的机会。对于我们留学生而言，无论是这起事件，还是其他和我们相关的事件，都要庖丁解牛，搞清事实再发表看法，而不是人云亦云。</p>
 <p>知乎回答原文：<a href="https://www.zhihu.com/question/60142160/answer/173009071" target="_blank" rel="noopener">https://www.zhihu.com/question/60142160/answer/173009071</a></p>
 
+
+                
+                    
+                
+
+                
 
                 <hr>
 
@@ -274,8 +322,8 @@
     <!-- Sidebar Container -->
 
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-10 col-lg-offset-1
+                col-md-12
                 sidebar-container">
 
                 <!-- Featured Tags -->
@@ -309,6 +357,29 @@
         </div>
     </div>
 </article>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 
 
