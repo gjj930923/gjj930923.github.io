@@ -53,6 +53,7 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
+<link rel="alternate" href="/atom.xml" title="北美嘉哥" type="application/atom+xml">
 </head>
 
 
@@ -93,13 +94,6 @@
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About Me</a>
                         </li>
                         
@@ -107,7 +101,21 @@
 
                         
                         <li>
+                            <a href="/galleries/">相册</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
@@ -239,7 +247,7 @@
                 
                 <h3 id="Install-安装："><a href="#Install-安装：" class="headerlink" title="Install 安装："></a>Install 安装：</h3><p><code>sudo apt-get install awscli</code></p>
 <h3 id="Configuration-配置："><a href="#Configuration-配置：" class="headerlink" title="Configuration 配置："></a>Configuration 配置：</h3><p><code>aws configure</code></p>
-<h3 id="File-Operation-文件操作："><a href="#File-Operation-文件操作：" class="headerlink" title="File Operation 文件操作："></a>File Operation 文件操作：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Create a new bucket 新建存储桶</span><br><span class="line">aws s3 mb s3://bucketname</span><br><span class="line"><span class="meta">#</span> Browse the file list 查看文件列表</span><br><span class="line">aws s3 ls s3://bucketname</span><br><span class="line"><span class="meta">#</span> Upload file to S3 上传文件到S3</span><br><span class="line">aws s3 cp test.txt s3://bucketname</span><br><span class="line"><span class="meta">#</span> Download file from S3 从S3下载文件</span><br><span class="line">aws s3 cp s3://bucketname/test.txt .</span><br><span class="line"><span class="meta">#</span> Delete file in S3 删除S3内文件</span><br><span class="line">aws s3 rm s3://bucketname/test.txt</span><br><span class="line"><span class="meta">#</span> Delete bucket in S3 删除存储桶</span><br><span class="line">aws s3 rb s3://bucketname [--force]</span><br></pre></td></tr></table></figure>
+<h3 id="File-Operation-文件操作："><a href="#File-Operation-文件操作：" class="headerlink" title="File Operation 文件操作："></a>File Operation 文件操作：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Create a new bucket 新建存储桶</span></span><br><span class="line">aws s3 mb s3://bucketname</span><br><span class="line"><span class="meta">#</span><span class="bash"> Browse the file list 查看文件列表</span></span><br><span class="line">aws s3 ls s3://bucketname</span><br><span class="line"><span class="meta">#</span><span class="bash"> Upload file to S3 上传文件到S3</span></span><br><span class="line">aws s3 cp test.txt s3://bucketname</span><br><span class="line"><span class="meta">#</span><span class="bash"> Download file from S3 从S3下载文件</span></span><br><span class="line">aws s3 cp s3://bucketname/test.txt .</span><br><span class="line"><span class="meta">#</span><span class="bash"> Delete file <span class="keyword">in</span> S3 删除S3内文件</span></span><br><span class="line">aws s3 rm s3://bucketname/test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash"> Delete bucket <span class="keyword">in</span> S3 删除存储桶</span></span><br><span class="line">aws s3 rb s3://bucketname [--force]</span><br></pre></td></tr></table></figure>
 
 
                 
