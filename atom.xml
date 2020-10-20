@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gjj930923.github.io/"/>
-  <updated>2020-05-18T03:02:47.023Z</updated>
+  <updated>2020-10-20T04:03:53.149Z</updated>
   <id>http://gjj930923.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每一个人的眼中都不平凡的2020</title>
+    <link href="http://gjj930923.github.io/2020/10/20/2020-difficulty/"/>
+    <id>http://gjj930923.github.io/2020/10/20/2020-difficulty/</id>
+    <published>2020-10-21T02:12:39.000Z</published>
+    <updated>2020-10-20T04:03:53.149Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;历史的车轮&quot;&gt;&lt;a href=&quot;#历史的车轮&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="随感" scheme="http://gjj930923.github.io/tags/%E9%9A%8F%E6%84%9F/"/>
+    
+      <category term="美国" scheme="http://gjj930923.github.io/tags/%E7%BE%8E%E5%9B%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>美帝匹兹堡新冠抗疫记【持续更新中】</title>
@@ -254,33 +281,6 @@
     
     
       <category term="中美思考" scheme="http://gjj930923.github.io/tags/%E4%B8%AD%E7%BE%8E%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用</title>
-    <link href="http://gjj930923.github.io/2017/03/27/Multithread_Programming_primer/"/>
-    <id>http://gjj930923.github.io/2017/03/27/Multithread_Programming_primer/</id>
-    <published>2017-03-27T04:57:51.000Z</published>
-    <updated>2018-12-31T04:29:36.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;基本原理&quot;&gt;&lt;a href=&quot;#基本原理&quot; class=&quot;headerlink&quot; title=&quot;基本原理&quot;&gt;&lt;/a&gt;基本原理&lt;/h3&gt;&lt;p&gt;每个java对象都有一把锁， 当有多个线程同时访问共享资源的时候， 需要synchronized 来控制安全性，
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Java" scheme="http://gjj930923.github.io/tags/Java/"/>
-    
-      <category term="多线程" scheme="http://gjj930923.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
