@@ -954,3 +954,24 @@ body {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
+.imgText {
+  color: grey;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.imgTextright {
+  color: grey;
+  font-size: 15px;
+  float: right; 
+  width: 49%;
+  margin-bottom: 20px;
+  margin-left: 1%;
+}
+.imgTextleft {
+  color: grey;
+  font-size: 15px;
+  float: left; 
+  width: 49%;
+  margin-bottom: 20px;
+  margin-right: 1%;
+}

@@ -23,7 +23,24 @@ $(function() {
 // responsive tables
 $(document).ready(function() {
 	$("table").wrap("<div class='table-responsive'></div>");
-	$("table").addClass("table");
+    $("table").addClass("table");
+    $.each($("img"), function() {
+        var altText = $(this).attr('alt');
+        var src = $(this).attr('src').split('#');
+            if (src[1] && $(window).width() >= 768) {
+                $(this).wrap('<figure class="imgText' + src[1] + '"></figure>');
+                if (altText) {
+                    $(this).after('<figcaption class="' + src[1] + '">' + altText + '</figcaption>');
+                }
+            }
+            else {
+                $(this).wrap('<figure class="imgText"></figure>');
+                if (altText) {
+                    $(this).after('<figcaption>' + altText + '</figcaption>');
+                }
+                
+            }   
+    });
 });
 
 // responsive embed videos
