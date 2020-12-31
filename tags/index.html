@@ -94,14 +94,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/galleries/">相册</a>
                         </li>
                         
                     
@@ -115,7 +115,7 @@
 
                         
                         <li>
-                            <a href="/galleries/">相册</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -181,21 +181,21 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
+                    <a href="#总结" title="总结" rel="2">总结</a>
+                
+                    <a href="#相册/Album" title="相册/Album" rel="1">相册/Album</a>
+                
                     <a href="#信用卡" title="信用卡" rel="1">信用卡</a>
                 
                     <a href="#机场贵宾室" title="机场贵宾室" rel="1">机场贵宾室</a>
                 
                     <a href="#随感" title="随感" rel="4">随感</a>
                 
-                    <a href="#总结" title="总结" rel="1">总结</a>
-                
                     <a href="#回国" title="回国" rel="1">回国</a>
                 
                     <a href="#美国" title="美国" rel="2">美国</a>
                 
-                    <a href="#父母" title="父母" rel="1">父母</a>
-                
-                    <a href="#相册/Album" title="相册/Album" rel="1">相册/Album</a>
+                    <a href="#Android" title="Android" rel="2">Android</a>
                 
                     <a href="#AWS" title="AWS" rel="1">AWS</a>
                 
@@ -203,24 +203,83 @@
                 
                     <a href="#awscli" title="awscli" rel="1">awscli</a>
                 
-                    <a href="#MySQL" title="MySQL" rel="1">MySQL</a>
-                
-                    <a href="#VPN" title="VPN" rel="3">VPN</a>
-                
-                    <a href="#Android" title="Android" rel="2">Android</a>
-                
-                    <a href="#中美思考" title="中美思考" rel="1">中美思考</a>
-                
                     <a href="#Java" title="Java" rel="1">Java</a>
                 
                     <a href="#多线程" title="多线程" rel="1">多线程</a>
                 
+                    <a href="#MySQL" title="MySQL" rel="1">MySQL</a>
+                
+                    <a href="#中美思考" title="中美思考" rel="1">中美思考</a>
+                
+                    <a href="#VPN" title="VPN" rel="3">VPN</a>
+                
                     <a href="#Ubuntu" title="Ubuntu" rel="1">Ubuntu</a>
+                
+                    <a href="#父母" title="父母" rel="1">父母</a>
                 
             </div>
 
             <!-- 标签列表 -->
 
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="总结">
+                    <span class="tag-text">总结</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2020/12/31/summary/">
+                        <h2 class="post-title">
+                            2020年12月总结
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2018/12/31/2018-summaries/">
+                        <h2 class="post-title">
+                            那些有或没有记录在朋友圈里的2018
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="相册/Album">
+                    <span class="tag-text">相册/Album</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2020/05/17/2020-covid19-usa/">
+                        <h2 class="post-title">
+                            美帝匹兹堡新冠抗疫记【持续更新中】
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
             
             <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="信用卡">
@@ -276,21 +335,6 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2018/12/31/2018-summaries/">
-                        <h2 class="post-title">
-                            那些有或没有记录在朋友圈里的2018
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
                      <a href="/2019/12/10/2019-back-home/">
                         <h2 class="post-title">
                             上回国飞机之前
@@ -306,9 +350,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2019/06/16/2019-spring-festival-output/">
+                     <a href="/2018/12/31/2018-summaries/">
                         <h2 class="post-title">
-                            父母第一次来美国，是什么样的体验
+                            那些有或没有记录在朋友圈里的2018
                         </h2>
                         
                     </a>
@@ -331,21 +375,14 @@
                 </div>
                 <hr>
                 
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="总结">
-                    <span class="tag-text">总结</span>
-                </span>
-                
                   <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2018/12/31/2018-summaries/">
+                     <a href="/2019/06/16/2019-spring-festival-output/">
                         <h2 class="post-title">
-                            那些有或没有记录在朋友圈里的2018
+                            父母第一次来美国，是什么样的体验
                         </h2>
                         
                     </a>
@@ -387,9 +424,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2019/06/16/2019-spring-festival-output/">
+                     <a href="/2020/10/20/2020-difficulty/">
                         <h2 class="post-title">
-                            父母第一次来美国，是什么样的体验
+                            每一个人的眼中都不平凡的2020
                         </h2>
                         
                     </a>
@@ -402,9 +439,274 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2020/10/20/2020-difficulty/">
+                     <a href="/2019/06/16/2019-spring-festival-output/">
                         <h2 class="post-title">
-                            每一个人的眼中都不平凡的2020
+                            父母第一次来美国，是什么样的体验
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Android">
+                    <span class="tag-text">Android</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/12/22/Android-学习小结1/">
+                        <h2 class="post-title">
+                            Android 学习小结1
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/12/22/初学Android-Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
+                        <h2 class="post-title">
+                            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="AWS">
+                    <span class="tag-text">AWS</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/01/21/AWS-S3-Useful-awscli-Operations-at-Linux/">
+                        <h2 class="post-title">
+                            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Linux">
+                    <span class="tag-text">Linux</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/01/21/AWS-S3-Useful-awscli-Operations-at-Linux/">
+                        <h2 class="post-title">
+                            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="awscli">
+                    <span class="tag-text">awscli</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/01/21/AWS-S3-Useful-awscli-Operations-at-Linux/">
+                        <h2 class="post-title">
+                            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Java">
+                    <span class="tag-text">Java</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/03/27/Multithread-Programming-primer/">
+                        <h2 class="post-title">
+                            【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="多线程">
+                    <span class="tag-text">多线程</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/03/27/Multithread-Programming-primer/">
+                        <h2 class="post-title">
+                            【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="MySQL">
+                    <span class="tag-text">MySQL</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/03/19/MySQL-access/">
+                        <h2 class="post-title">
+                            【转】设置本地MySQL允许外部访问的方法
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="中美思考">
+                    <span class="tag-text">中美思考</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/05/26/Comment-about-shuping-speech/">
+                        <h2 class="post-title">
+                            马里兰大学杨舒平毕业典礼演讲到底是怎么回事
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="VPN">
+                    <span class="tag-text">VPN</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/06/10/anyconnect-installation/">
+                        <h2 class="post-title">
+                            配置 Cisco AnyConnect VPN 客户端
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/07/08/shadowsocks-installation/">
+                        <h2 class="post-title">
+                            【转】配置 Shadow Socks 客户端
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2017/06/04/ipsec-l2tp-vpn-client/">
+                        <h2 class="post-title">
+                            【转】配置 IPsec/L2TP VPN 客户端
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Ubuntu">
+                    <span class="tag-text">Ubuntu</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/12/22/初学Android-Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
+                        <h2 class="post-title">
+                            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
                         </h2>
                         
                     </a>
@@ -427,293 +729,6 @@
                      <a href="/2019/06/16/2019-spring-festival-output/">
                         <h2 class="post-title">
                             父母第一次来美国，是什么样的体验
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="相册/Album">
-                    <span class="tag-text">相册/Album</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2020/05/17/2020-covid19-usa/">
-                        <h2 class="post-title">
-                            美帝匹兹堡新冠抗疫记【持续更新中】
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="AWS">
-                    <span class="tag-text">AWS</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/">
-                        <h2 class="post-title">
-                            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Linux">
-                    <span class="tag-text">Linux</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/">
-                        <h2 class="post-title">
-                            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="awscli">
-                    <span class="tag-text">awscli</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/01/21/AWS S3 Useful awscli Operations at Linux/">
-                        <h2 class="post-title">
-                            AWS S3 Useful awscli Operations at Linux | 亚马逊AWS S3常用Linux awscli操作
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="MySQL">
-                    <span class="tag-text">MySQL</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/03/19/MySQL access/">
-                        <h2 class="post-title">
-                            【转】设置本地MySQL允许外部访问的方法
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="VPN">
-                    <span class="tag-text">VPN</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/06/10/anyconnect_installation/">
-                        <h2 class="post-title">
-                            配置 Cisco AnyConnect VPN 客户端
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/06/04/ipsec_l2tp_vpn_client/">
-                        <h2 class="post-title">
-                            【转】配置 IPsec/L2TP VPN 客户端
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/07/08/shadowsocks_installation/">
-                        <h2 class="post-title">
-                            【转】配置 Shadow Socks 客户端
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Android">
-                    <span class="tag-text">Android</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/12/22/Android 学习小结1/">
-                        <h2 class="post-title">
-                            Android 学习小结1
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
-                        <h2 class="post-title">
-                            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="中美思考">
-                    <span class="tag-text">中美思考</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/05/26/Comment_about_shuping_speech/">
-                        <h2 class="post-title">
-                            马里兰大学杨舒平毕业典礼演讲到底是怎么回事
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Java">
-                    <span class="tag-text">Java</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/03/27/Multithread_Programming_primer/">
-                        <h2 class="post-title">
-                            【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="多线程">
-                    <span class="tag-text">多线程</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/03/27/Multithread_Programming_primer/">
-                        <h2 class="post-title">
-                            【转】Java多线程机制以及wait、notify、notifyall、synchronized等的使用
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Ubuntu">
-                    <span class="tag-text">Ubuntu</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/12/22/初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）/">
-                        <h2 class="post-title">
-                            初学Android Studio关于启动AVD虚拟机的问题小结（Ubuntu系统64位）
                         </h2>
                         
                     </a>
