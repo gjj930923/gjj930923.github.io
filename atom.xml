@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gjj930923.github.io/"/>
-  <updated>2020-12-31T22:38:06.124Z</updated>
+  <updated>2021-01-24T23:19:30.940Z</updated>
   <id>http://gjj930923.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈Costco烤鸡的几十种吃法</title>
+    <link href="http://gjj930923.github.io/2021/01/24/costco-chicken/"/>
+    <id>http://gjj930923.github.io/2021/01/24/costco-chicken/</id>
+    <published>2021-01-24T20:29:32.000Z</published>
+    <updated>2021-01-24T23:19:30.940Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;相信很多在美国的华人都知道，Costco闻名几十年的Rotisserie烤鸡了，价格一向都是$4.99+tax不变。一只3-4磅左右，甚至比其他超市卖的生鸡都要便宜。今天我就开开脑洞，看看如何最大化的利用好这只烤鸡～不仅仅可以一个人吃也可以全家一起吃！&lt;/p&gt;
+&lt;p&gt;&lt;im
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Costco" scheme="http://gjj930923.github.io/tags/Costco/"/>
+    
+      <category term="美国" scheme="http://gjj930923.github.io/tags/%E7%BE%8E%E5%9B%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>2020年12月总结</title>
@@ -197,9 +225,9 @@
     
     
     
-      <category term="总结" scheme="http://gjj930923.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="随感" scheme="http://gjj930923.github.io/tags/%E9%9A%8F%E6%84%9F/"/>
+    
+      <category term="总结" scheme="http://gjj930923.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -244,35 +272,6 @@
         
           &lt;p&gt;更新日志:&lt;br&gt;2017.7.5 更新Mac OSX部分，升级windows部分版本号。&lt;/p&gt;
 &lt;h3 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="VPN" scheme="http://gjj930923.github.io/tags/VPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【转】配置 IPsec/L2TP VPN 客户端</title>
-    <link href="http://gjj930923.github.io/2017/06/04/ipsec-l2tp-vpn-client/"/>
-    <id>http://gjj930923.github.io/2017/06/04/ipsec-l2tp-vpn-client/</id>
-    <published>2017-06-04T14:47:02.000Z</published>
-    <updated>2018-12-31T04:29:38.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;平台名称&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#windows&quot;&gt;Windows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#os-x&quot;&gt;OS X (macOS)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
         
       
     
