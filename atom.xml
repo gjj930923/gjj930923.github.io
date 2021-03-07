@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gjj930923.github.io/"/>
-  <updated>2021-02-01T04:22:30.221Z</updated>
+  <updated>2021-03-07T02:09:19.206Z</updated>
   <id>http://gjj930923.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2020年12月总结</title>
+    <title>2021年2月总结</title>
+    <link href="http://gjj930923.github.io/2021/02/28/month-summary/"/>
+    <id>http://gjj930923.github.io/2021/02/28/month-summary/</id>
+    <published>2021-03-01T04:11:05.000Z</published>
+    <updated>2021-03-07T02:09:19.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;工作总结&quot;&gt;&lt;a href=&quot;#工作总结&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="总结" scheme="http://gjj930923.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021年1月总结</title>
     <link href="http://gjj930923.github.io/2021/01/31/month-summary/"/>
     <id>http://gjj930923.github.io/2021/01/31/month-summary/</id>
     <published>2021-02-01T03:42:14.000Z</published>
-    <updated>2021-02-01T04:22:30.221Z</updated>
+    <updated>2021-02-01T04:23:04.300Z</updated>
     
     <summary type="html">
     
@@ -63,9 +88,9 @@
     
     
     
-      <category term="美国" scheme="http://gjj930923.github.io/tags/%E7%BE%8E%E5%9B%BD/"/>
-    
       <category term="Costco" scheme="http://gjj930923.github.io/tags/Costco/"/>
+    
+      <category term="美国" scheme="http://gjj930923.github.io/tags/%E7%BE%8E%E5%9B%BD/"/>
     
   </entry>
   
@@ -253,32 +278,6 @@
       <category term="随感" scheme="http://gjj930923.github.io/tags/%E9%9A%8F%E6%84%9F/"/>
     
       <category term="总结" scheme="http://gjj930923.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【转】配置 Shadow Socks 客户端</title>
-    <link href="http://gjj930923.github.io/2017/07/08/shadowsocks-installation/"/>
-    <id>http://gjj930923.github.io/2017/07/08/shadowsocks-installation/</id>
-    <published>2017-07-09T03:46:33.000Z</published>
-    <updated>2018-12-31T04:29:36.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Mac&quot;&gt;&lt;a href=&quot;#Mac&quot; class=&quot;headerlink&quot; title=&quot;Mac&quot;&gt;&lt;/a&gt;Mac&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;首先通过&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="VPN" scheme="http://gjj930923.github.io/tags/VPN/"/>
     
   </entry>
   
